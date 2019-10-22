@@ -1,0 +1,119 @@
+$headerHeight: 50px;
+$sidebarHeight: 745px;
+$informationWidth: 100%;
+
+* {
+  margin: 0;
+}
+
+.header {
+  width: 100%;
+  max-width: 100%;
+  height: $headerHeight;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.sidebar {
+  width: 15%;
+  max-width: 100%;
+  height: $sidebarHeight;
+  border-right: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar-user {
+  width: 100%;
+  max-width: 100%;
+  height: $sidebarHeight / 2;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    &:hover{
+     cursor: pointer;
+     text-decoration: underline;
+    }
+  }
+}
+
+.sidebar-admin {
+  width: 100%;
+  max-width: 100%;
+  height: $sidebarHeight / 2;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    &:hover{
+     cursor: pointer;
+     text-decoration: underline;
+    }
+  }
+}
+
+.main {
+  display: flex;
+}
+
+.information-root{
+  width: $informationWidth;
+  max-width: 100%;
+}
+
+.information-user-root{
+  width: $informationWidth;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.information-admin-root{
+  width: $informationWidth;
+  max-width: 100%;
+}
+
+.information-admin {
+  height: $sidebarHeight;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.user {
+  margin: 4px 5px;
+  width: ($informationWidth / 6) - 1;
+  max-width: 100%;
+  border: 1px solid black;
+}
+
+.user-photo {
+  width: 100%;
+  max-width: 100%;
+  height: 250px;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-name {
+  width: 100%;
+  max-width: 100%;
+  height: 111px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
