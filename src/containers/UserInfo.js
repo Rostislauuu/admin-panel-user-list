@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import { userStyle } from '../styles/userStyle';
 
@@ -8,7 +8,7 @@ const UserInfo = ({ user, handleSetUser }) => {
     const styleUser = userStyle;
 
     const backToList = () => {
-    handleSetUser(null);
+        handleSetUser(null);
     }
 
     return (

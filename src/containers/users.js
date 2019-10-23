@@ -1,4 +1,4 @@
-const initialState = [
+export const users = [
     {
         id: 1,
         user: 'Rostik Sheketa',
@@ -94,9 +94,3 @@ const initialState = [
         phone: '0959115522'
     }
 ]
-
-export  default function users ( state = initialState, action) {
-    switch(action.type){
-        default: return state
-    }
-}

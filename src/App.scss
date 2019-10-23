@@ -64,26 +64,6 @@ $sidebarHeight: 745px;
   display: flex;
 }
 
-.information-root{
-  width: 100%;
-  max-width: 100%;
-  height: $sidebarHeight;
-}
-
-.information-user-root{
-  width: 100%;
-  max-width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: stretch;
-}
-
-.information-admin-root{
-  width: 100%;
-  max-width: 100%;
-}
-
 .information-admin {
   height: $sidebarHeight;
   display: flex;

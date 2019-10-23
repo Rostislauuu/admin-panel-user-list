@@ -24,11 +24,13 @@ export const userStyle =  {
     },
     selectedUser: {
         width: '100%',
-        height: '750px',
-        border: '1px solid orange',
+        height: '720px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    hover: {
+        cursor: 'pointer'
     }
 }

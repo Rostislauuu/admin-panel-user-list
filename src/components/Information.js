@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
 
+import {users}  from '../containers/users';
+import {userRootStyle} from '../styles/userRootStyle';
 import User from '../containers/User';
 import UserInfo from '../containers/UserInfo';
 import AdminFunc from '../containers/AdminFunc';
 
-const Information = ({ users, showUsers, showAdminFunc }) => {
-    const  [ isUser, setIsUser ] = useState(null);
+const Information = ({role} ) => {
+    const  [ user, setUser ] = useState(null);
+    const style = userRootStyle;
 
     const handleSetUser = (user) => {
-        setIsUser(user);
-    }
+        setUser(user);
+    };
 
     const usersList = users.map( item => {
        return <User onSetUser={handleSetUser} key={item.id} user={item} />
@@ -18,19 +20,17 @@ const Information = ({ users, showUsers, showAdminFunc }) => {
  
     return(
         <div className="information-root">
-            <div className="information-user-root">{isUser && <UserInfo user={isUser} handleSetUser ={handleSetUser}  />}</div>
-            <div className="information-user-root">{(showUsers && !isUser)  && usersList  }</div>
-            <div className="information-admin-root">{showAdminFunc && <AdminFunc />}</div>
+            <div style={style.userRoot} >
+                {(role === 'user' && !user) && usersList}
+            </div>
+            <div style={style.userRoot}>
+                {user && <UserInfo user={user} handleSetUser ={handleSetUser} />}
+            </div>
+            <div style={style.adminRoot}>
+                {role === 'admin' && <AdminFunc />}
+            </div>
         </div>
     )
 }
 
-const mapStateToProps = function (state) {
-    return {
-        users: state.users,
-        showUsers: state.access.showUsers,
-        showAdminFunc: state.access.showAdminFunc
-    }
-}
-
-export default connect( mapStateToProps, null) (Information);
+export default Information;
