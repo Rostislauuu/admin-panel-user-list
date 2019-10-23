@@ -49,7 +49,7 @@ const initialState = [
     {
         id: 7,
         user: 'Olha Lesiuk',
-        direction: 'Front-end',
+        direction: 'QA',
         email: 'olhalesiuk@gmail.com',
         phone: '0959115522'
     }
@@ -65,7 +65,7 @@ const initialState = [
     {
         id: 9,
         user: 'Tatiana Sementsiv',
-        direction: 'Front-end',
+        direction: 'English Teacher',
         email: 'tatianasementsiv@gmail.com',
         phone: '0959115522'
     }
