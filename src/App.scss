@@ -64,13 +64,6 @@ $sidebarHeight: 745px;
   display: flex;
 }
 
-.information-admin {
-  height: $sidebarHeight;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 @media(max-width: 1400px) {
   .user {
     margin: 4px 5px;
@@ -80,10 +73,6 @@ $sidebarHeight: 745px;
   }
 
   .sidebar {
-    height: 718px;
-  }
-
-  .information-root {
     height: 718px;
   }
 }

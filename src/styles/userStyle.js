@@ -1,8 +1,10 @@
 export const userStyle =  {
     root: {
-        margin: '4px 5px',
+        margin: '25px 10px 0px 8px',
         flex: 1,
+        maxHeight: '320px',
         minWidth: '15%',
+        maxWidth: '15%',
         border: '1px solid black',
     },
     photo: {
@@ -17,14 +19,14 @@ export const userStyle =  {
     name: {
         width: '100%',
         maxWidth: '100%',
-        height: '111px',
+        height: '70px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center'
     },
     selectedUser: {
         width: '100%',
-        height: '720px',
+        height: '718px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',

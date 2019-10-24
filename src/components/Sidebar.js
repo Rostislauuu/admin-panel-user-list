@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Sidebar = ({ switchToUser, switchToAdmin} ) => {
+const Sidebar = ({ switchToUser, switchToAdmin } ) => {
     return(
         <nav className="sidebar"> 
             <div className="sidebar-user">

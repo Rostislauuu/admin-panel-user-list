@@ -1,14 +1,14 @@
 export const users = [
     {
         id: 1,
-        user: 'Rostik Sheketa',
+        fullname: 'Rostik Sheketa',
         direction: 'Front-end',
         email: 'rostiksheketa@gmail.com',
         phone: '0999115554'
     },
     {
         id: 2,
-        user: 'Julia Savych',
+        fullname: 'Julia Savych',
         direction: 'Front-end',
         email: 'juliasavych@gmail.com',
         phone: '0959115522'
@@ -16,7 +16,7 @@ export const users = [
     ,
     {
         id: 3,
-        user: 'Christina Liudkevych',
+        fullname: 'Christina Liudkevych',
         direction: 'HR',
         email: 'chrisliudkevych@gmail.com',
         phone: '0959115522'
@@ -24,7 +24,7 @@ export const users = [
     ,
     {
         id: 4,
-        user: 'Dmitry Naumenko',
+        fullname: 'Dmitry Naumenko',
         direction: 'Front-end',
         email: 'dmitrynaumenko@gmail.com',
         phone: '0959115522'
@@ -32,7 +32,7 @@ export const users = [
     ,
     {
         id: 5,
-        user: 'Ihor Choliy',
+        fullname: 'Ihor Choliy',
         direction: 'Front-end',
         email: 'ihorcholiy@gmail.com',
         phone: '0959115522'
@@ -40,7 +40,7 @@ export const users = [
     ,
     {
         id: 6,
-        user: 'Nazarii Pyndus',
+        fullname: 'Nazarii Pyndus',
         direction: 'Front-end',
         email: 'nazariipyndus@gmail.com',
         phone: '0959115522'
@@ -48,7 +48,7 @@ export const users = [
     ,
     {
         id: 7,
-        user: 'Olha Lesiuk',
+        fullname: 'Olha Lesiuk',
         direction: 'QA',
         email: 'olhalesiuk@gmail.com',
         phone: '0959115522'
@@ -56,7 +56,7 @@ export const users = [
     ,
     {
         id: 8,
-        user: 'Serhiy Korynevych',
+        fullname: 'Serhiy Korynevych',
         direction: 'Front-end',
         email: 'serhiykorynevych@gmail.com',
         phone: '0959115522'
@@ -64,7 +64,7 @@ export const users = [
     ,
     {
         id: 9,
-        user: 'Tatiana Sementsiv',
+        fullname: 'Tatiana Sementsiv',
         direction: 'English Teacher',
         email: 'tatianasementsiv@gmail.com',
         phone: '0959115522'
@@ -72,7 +72,7 @@ export const users = [
     ,
     {
         id: 10,
-        user: 'Vitaliy Polinyk',
+        fullname: 'Vitaliy Polinyk',
         direction: 'Front-end',
         email: 'vitaliypolinyk@gmail.com',
         phone: '0959115522'
@@ -80,7 +80,7 @@ export const users = [
     ,
     {
         id: 11,
-        user: 'Artur Danch',
+        fullname: 'Artur Danch',
         direction: 'Front-end',
         email: 'arturdanch@gmail.com',
         phone: '0959115522'
@@ -88,7 +88,7 @@ export const users = [
     ,
     {
         id: 12,
-        user: 'Taras Tataryn',
+        fullname: 'Taras Tataryn',
         direction: 'Front-end',
         email: 'tarastataryn@gmail.com',
         phone: '0959115522'

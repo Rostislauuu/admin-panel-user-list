@@ -1,9 +1,9 @@
 import React from 'react';
 import  { userStyle } from '../styles/userStyle';
 
-const User = ({ user, onSetUser }) => {
+const User = ({ user, handleSetUser }) => {
     const getUser = () => {
-        onSetUser(user);
+        handleSetUser(user);
     };
     
     return (
@@ -12,7 +12,7 @@ const User = ({ user, onSetUser }) => {
                 <p>Imagine this is photo</p>
             </div>
             <div style={userStyle.name}>
-                <p onClick={getUser} style={userStyle.hover}>{user.user}</p>
+                <p onClick={getUser} style={userStyle.hover}>{user.fullname}</p>
             </div>
         </div>
     )
