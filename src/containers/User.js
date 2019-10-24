@@ -1,5 +1,4 @@
 import React from 'react';
-import  { userStyle } from '../styles/userStyle';
 
 const User = ({ user, handleSetUser }) => {
     const getUser = () => {
@@ -7,12 +6,15 @@ const User = ({ user, handleSetUser }) => {
     };
     
     return (
-        <div style={userStyle.root}>
-            <div style={userStyle.photo}>
-                <p>Imagine this is photo</p>
-            </div>
-            <div style={userStyle.name}>
-                <p onClick={getUser} style={userStyle.hover}>{user.fullname}</p>
+        <div className="col-1-4">
+            <div className="user">
+                <div className="user-photo">
+                    <img alt="Vakoms"
+                        src="http://www.usupport.in.ua/uploads/company/picture/302/view_vakoms_logo_.png" />
+                </div>
+                <div className="user-name">
+                    <p onClick={getUser}>{user.fullName}</p>
+                </div>
             </div>
         </div>
     )

@@ -6,7 +6,7 @@ const Sidebar = ({ switchToUser, switchToAdmin } ) => {
             <div className="sidebar-user">
                 <p onClick={switchToUser}>Users</p>
             </div>
-            <div className="sidebar-admin" > 
+            <div className="sidebar-admin " > 
                 <p onClick={switchToAdmin}>Admin</p>
             </div>
         </nav>
