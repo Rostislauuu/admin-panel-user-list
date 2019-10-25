@@ -8,12 +8,10 @@ $informationWidth: 100%;
 }
 
 .header {
-  width: 100%;
-  max-width: 100%;
-  
+  width: 20%;
+  max-width: 20%;
   display: flex;
   justify-content: center;
-  align-items: center
 }
 
 .header-image {
@@ -28,8 +26,8 @@ $informationWidth: 100%;
 .sidebar {
   flex-basis: 20%;
   max-width: 20%;
-  height: 300px;
-  // margin-top: 70px;
+  max-height: 10em;
+  margin-top: 70px;
   padding: 0px;
   display: inline-block;
   // display: flex;
@@ -48,7 +46,7 @@ $informationWidth: 100%;
   color: #0341fc;
   border-bottom: 1px solid white;
   border-radius: 5px;
-  transition: background 0.7s linear;
+  transition: background 0.3s linear;
 
   &:hover {
     background: greenyellow;
@@ -69,7 +67,7 @@ $informationWidth: 100%;
   color: #0341fc;
   border-bottom: 1px solid white;
   border-radius: 5px; 
-  transition: background 0.7s linear;
+  transition: background 0.3s linear;
 
   &:hover {
     background: greenyellow;
@@ -105,16 +103,43 @@ $informationWidth: 100%;
 .information-admin-root{
   display: flex;
   justify-content: center;
-  align-items: center
+  align-items: center;
+  margin-top: 70px;
 }
 
 .information-admin {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  flex-basis: 100%;
-  max-width: 100%;
+
+  label {
+    margin-bottom: 5px;
+    color: darken( #809fff, 15);
+  }
+
+  input {
+    height: 2em;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    outline: none;
+  }
+
+  button {
+    line-height: 2em;
+    border: none;
+    border-radius: 3px;
+    font-size: 15px;
+    color: greenyellow;
+    background: darken( #809fff, 10);
+    transition: color 0.3s linear, background 0.3s linear;
+
+    &:hover {
+      color: darken( #809fff, 15);
+      background: greenyellow;
+      cursor: pointer;
+    }
+  }
 }
 
 .selected-user-root {
@@ -145,12 +170,17 @@ $informationWidth: 100%;
   }
 
   button {
+    margin-top: 5px;
     line-height: 2em;
+    border: none;
     border-radius: 3px;
-    background: lighten( gray, 30 );
-    transition: background 0.6s linear;
+    color: lighten( red, 20 );
+    background: lighten( blue, 20 );
+    transition: all 0.3s linear;
+    outline: none;
 
     &:hover {
+      color: lighten( blue, 20 );
       background: lighten( red, 20 );
       cursor: pointer;
     }
@@ -164,6 +194,7 @@ $informationWidth: 100%;
   height: 40px;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 
   input {
     border-radius: 3px;

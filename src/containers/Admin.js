@@ -17,17 +17,30 @@ const Admin = ({addUser}) => {
     }
 
     const handleSubmit = () => {
-        addUser(user);
-        console.log(user);
+        if( fullName && birthday && direction && email && phone) {
+            addUser(user);
+            setFullName('');
+            setBirthday('');
+            setDirection('');
+            setEmail('');
+            setPhone('');
+        } else {
+            alert('Fill all fields');
+        }
     }
 
     return(
         <div className="information-admin">
-            <input onChange={ (e) => setFullName(e.target.value)} type="text" placeholder="fullname" />
-            <input onChange={(e) => setBirthday(e.target.value)} type="text" placeholder="birthday"  />
-            <input onChange={(e) => setDirection(e.target.value)} type="text" placeholder="direction"  />
-            <input onChange={(e) => setEmail(e.target.value)} type="text" placeholder="email" />
-            <input onChange={(e) => setPhone(e.target.value)} type="text" placeholder="phone" />
+            <label>Name</label>
+            <input onChange={ (e) => setFullName(e.target.value)} value={fullName} type="text" />
+            <label>Birthday</label>
+            <input onChange={(e) => setBirthday(e.target.value)} value={birthday} type="text" />
+            <label>Direction</label>
+            <input onChange={(e) => setDirection(e.target.value)} value={direction} type="text" />
+            <label>Email</label>
+            <input onChange={(e) => setEmail(e.target.value)} value={email} type="text" />
+            <label>Phone</label>
+            <input onChange={(e) => setPhone(e.target.value)} value={phone} type="text" />
             <button onClick={handleSubmit}>Submit</button>
         </div>
     )

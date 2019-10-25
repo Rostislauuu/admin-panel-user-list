@@ -4,17 +4,14 @@
 }
 
 .header {
-  width: 100%;
-  max-width: 100%;
+  width: 20%;
+  max-width: 20%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .header-image {
@@ -32,7 +29,8 @@
   -ms-flex-preferred-size: 20%;
       flex-basis: 20%;
   max-width: 20%;
-  height: 300px;
+  max-height: 10em;
+  margin-top: 70px;
   padding: 0px;
   display: inline-block;
   background: #cdd9ff;
@@ -49,8 +47,8 @@
   color: #0341fc;
   border-bottom: 1px solid white;
   border-radius: 5px;
-  -webkit-transition: background 0.7s linear;
-  transition: background 0.7s linear;
+  -webkit-transition: background 0.3s linear;
+  transition: background 0.3s linear;
 }
 
 .sidebar-user:hover {
@@ -71,8 +69,8 @@
   color: #0341fc;
   border-bottom: 1px solid white;
   border-radius: 5px;
-  -webkit-transition: background 0.7s linear;
-  transition: background 0.7s linear;
+  -webkit-transition: background 0.3s linear;
+  transition: background 0.3s linear;
 }
 
 .sidebar-admin:hover {
@@ -124,6 +122,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 70px;
 }
 
 .information-admin {
@@ -134,15 +133,41 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
-  max-width: 100%;
+}
+
+.information-admin label {
+  margin-bottom: 5px;
+  color: #3465ff;
+}
+
+.information-admin input {
+  height: 2em;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  outline: none;
+}
+
+.information-admin button {
+  line-height: 2em;
+  border: none;
+  border-radius: 3px;
+  font-size: 15px;
+  color: greenyellow;
+  background: #4d78ff;
+  -webkit-transition: color 0.3s linear, background 0.3s linear;
+  transition: color 0.3s linear, background 0.3s linear;
+}
+
+.information-admin button:hover {
+  color: #3465ff;
+  background: greenyellow;
+  cursor: pointer;
 }
 
 .selected-user-root {
@@ -184,14 +209,19 @@
 }
 
 .information-user-selected button {
+  margin-top: 5px;
   line-height: 2em;
+  border: none;
   border-radius: 3px;
-  background: #cdcdcd;
-  -webkit-transition: background 0.6s linear;
-  transition: background 0.6s linear;
+  color: #ff6666;
+  background: #6666ff;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  outline: none;
 }
 
 .information-user-selected button:hover {
+  color: #6666ff;
   background: #ff6666;
   cursor: pointer;
 }
@@ -207,6 +237,9 @@
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .search input {

@@ -1,10 +1,15 @@
 import React from 'react';
 
-const UserInfo = ({ user, handleSetUser }) => {
+const UserInfo = ({ user, handleSetUser, deleteUser }) => {
 
     const backToList = () => {
         handleSetUser(null);
     }
+
+    // REWORK!!
+    // const onDeleteUser = () => {
+    //     deleteUser(user.id);
+    // }
 
     return (
         <div className="information-user-selected">
@@ -16,6 +21,7 @@ const UserInfo = ({ user, handleSetUser }) => {
             <p>{user.email}</p>
             <p>{user.phone}</p>
             <button onClick={backToList}>Back</button>
+            <button>Delete</button>
         </div>
     )
 }

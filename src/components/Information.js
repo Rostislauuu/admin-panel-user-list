@@ -11,12 +11,12 @@ const Information = ({role}) => {
     const actualData = localData? JSON.parse(localData) : allUsers;
 
     const  [ user, setUser ] = useState(null);
-    const [users, setUsers] = useState(actualData);
+    const [ users, setUsers ] = useState(actualData);
     const [ searchValue, setSearchValue ] = useState('');
 
-    useEffect(() => {
+    useEffect( () => {
         localStorage.setItem( 'users', JSON.stringify(users) );
-    }, [users])
+    }, [users] )
 
     const handleSetUser = (user) => {
         setUser(user);
@@ -26,6 +26,12 @@ const Information = ({role}) => {
     const addUser = newUser => {
         setUsers( [...users, newUser] );
     }
+
+    // NOT DELETING
+    // const deleteUser = id => {
+    //     const smth = JSON.parse( localStorage.getItem('users') );
+        
+    // }
 
     const handleSetSearchValue = value=> {
         setSearchValue(value);
