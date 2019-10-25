@@ -8,7 +8,9 @@ const UserInfo = ({ user, handleSetUser }) => {
 
     return (
         <div className="information-user-selected">
-            <p>{user.fullname}</p>
+            <img alt="Vakoms"
+                src="http://www.usupport.in.ua/uploads/company/picture/302/view_vakoms_logo_.png" />
+            <p>{user.fullName}</p>
             <p>{user.birthday}</p>
             <p>{user.direction}</p>
             <p>{user.email}</p>

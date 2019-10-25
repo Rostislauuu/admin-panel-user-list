@@ -1,18 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-import {users}  from '../containers/users';
+import {allUsers}  from '../containers/users';
 import User from '../containers/User';
 import UserInfo from '../containers/UserInfo';
 import Admin from '../containers/Admin';
 import Search from '../containers/Search';
 
-const Information = ({role} ) => {
+const Information = ({role}) => {
+    const localData = localStorage.getItem('users');
+    const actualData = localData? JSON.parse(localData) : allUsers;
+
     const  [ user, setUser ] = useState(null);
+    const [users, setUsers] = useState(actualData);
     const [ searchValue, setSearchValue ] = useState('');
+
+    useEffect(() => {
+        localStorage.setItem( 'users', JSON.stringify(users) );
+    }, [users])
 
     const handleSetUser = (user) => {
         setUser(user);
+        setSearchValue(searchValue);
     };
+
+    const addUser = newUser => {
+        setUsers( [...users, newUser] );
+    }
 
     const handleSetSearchValue = value=> {
         setSearchValue(value);
@@ -25,20 +38,22 @@ const Information = ({role} ) => {
     const filteredList = usersList.filter( item => {
         return item.props.user.fullName.toLowerCase().includes( searchValue.toLowerCase() );
     }) 
-    // SEARCH FIELD IS EMPTY AFTER 'BACK' FROM SELECTED USER!!!!!!!!!
+
     return(
-        <div>
-            <div className="user-search">
-                {( role === 'user' && !user )  && <Search handleSetSearchValue={handleSetSearchValue} />}
+        <div className="information-root">
+            <div className="user-search-root">
+                {( role === 'user' && !user )  && 
+                <Search handleSetSearchValue={handleSetSearchValue} searchValue={searchValue} />
+                }
                 <div className="information-user-root" >
                     {( role === 'user' && !user ) && filteredList}
                 </div>  
             </div>
-            <div className="information-user-selected">
-                {user && <UserInfo user={user} handleSetUser ={handleSetUser} />}
+            <div className="selected-user-root">
+                {(user && role !== 'admin' ) && <UserInfo user={user} handleSetUser={handleSetUser} />}
             </div>
             <div className="information-admin-root">
-                {role === 'admin' && <Admin />}
+                {role === 'admin' && <Admin addUser={addUser} />}
             </div>
         </div>
     )

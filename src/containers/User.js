@@ -6,7 +6,7 @@ const User = ({ user, handleSetUser }) => {
     };
     
     return (
-        <div className="col-1-4">
+        <div className="col-1-4 col-1-2">
             <div className="user">
                 <div className="user-photo">
                     <img alt="Vakoms"
