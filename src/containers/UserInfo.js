@@ -6,10 +6,9 @@ const UserInfo = ({ user, handleSetUser, deleteUser }) => {
         handleSetUser(null);
     }
 
-    // REWORK!!
-    // const onDeleteUser = () => {
-    //     deleteUser(user.id);
-    // }
+    const onDeleteUser = () => {
+        deleteUser(user.id);
+    }
 
     return (
         <div className="information-user-selected">
@@ -21,7 +20,7 @@ const UserInfo = ({ user, handleSetUser, deleteUser }) => {
             <p>{user.email}</p>
             <p>{user.phone}</p>
             <button onClick={backToList}>Back</button>
-            <button>Delete</button>
+            <button onClick={onDeleteUser}>Delete</button>
         </div>
     )
 }

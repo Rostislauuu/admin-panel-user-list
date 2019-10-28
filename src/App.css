@@ -162,6 +162,7 @@
   background: #4d78ff;
   -webkit-transition: color 0.3s linear, background 0.3s linear;
   transition: color 0.3s linear, background 0.3s linear;
+  outline: none;
 }
 
 .information-admin button:hover {

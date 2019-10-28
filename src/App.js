@@ -14,10 +14,16 @@ const App = () => {
   }
 
   const switchToAdmin = () => {
-    setRole('admin');
+    const adminPassword = prompt("Enter admin`s password");
+    if (adminPassword === '1111') {
+      setRole('admin')
+    } else { 
+      // setRole(null) 
+      alert('You have no permission')
+    };
   }
 
-  useEffect( () => {}, [role])
+  useEffect( () => {}, [role] )
 
   return( 
     <div className="root-box">

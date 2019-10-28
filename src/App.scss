@@ -133,6 +133,7 @@ $informationWidth: 100%;
     color: greenyellow;
     background: darken( #809fff, 10);
     transition: color 0.3s linear, background 0.3s linear;
+    outline: none;
 
     &:hover {
       color: darken( #809fff, 15);

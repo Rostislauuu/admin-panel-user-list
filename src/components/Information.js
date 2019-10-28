@@ -27,11 +27,15 @@ const Information = ({role}) => {
         setUsers( [...users, newUser] );
     }
 
-    // NOT DELETING
-    // const deleteUser = id => {
-    //     const smth = JSON.parse( localStorage.getItem('users') );
-        
-    // }
+    const deleteUser = id => {
+        const adminPassword = prompt('Enter admin`s password');
+        if (adminPassword === '1111') {
+            setUsers(users.filter(user => {
+                return user.id !== id
+            }));
+            setUser(null);
+        } else alert('You have no permission');
+    }
 
     const handleSetSearchValue = value=> {
         setSearchValue(value);
@@ -56,7 +60,7 @@ const Information = ({role}) => {
                 </div>  
             </div>
             <div className="selected-user-root">
-                {(user && role !== 'admin' ) && <UserInfo user={user} handleSetUser={handleSetUser} />}
+                {(user && role !== 'admin' ) && <UserInfo deleteUser={deleteUser} user={user} handleSetUser={handleSetUser} />}
             </div>
             <div className="information-admin-root">
                 {role === 'admin' && <Admin addUser={addUser} />}
