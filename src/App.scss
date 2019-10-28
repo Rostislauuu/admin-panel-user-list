@@ -27,11 +27,9 @@ $informationWidth: 100%;
   flex-basis: 20%;
   max-width: 20%;
   max-height: 10em;
-  margin-top: 70px;
+  margin-left: 10px;
   padding: 0px;
   display: inline-block;
-  // display: flex;
-  // flex-direction: column;
   background: lighten( #809fff, 15);
   border-radius: 5px;
 }
@@ -107,6 +105,78 @@ $informationWidth: 100%;
   margin-top: 70px;
 }
 
+.user-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  label {
+    margin-bottom: 5px;
+    color: darken( #809fff, 15);
+  }
+
+  p {
+    height: 1em;
+    margin-bottom: 10px;
+    padding: 5px;
+    outline: none;
+  }
+
+  button {
+    line-height: 2em;
+    border: none;
+    border-radius: 3px;
+    font-size: 15px;
+    color: greenyellow;
+    background: darken( #809fff, 10);
+    transition: color 0.3s linear, background 0.3s linear;
+    outline: none;
+
+    &:hover {
+      color: darken( #809fff, 15);
+      background: greenyellow;
+      cursor: pointer;
+    }
+  }
+}
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  label {
+    margin-bottom: 5px;
+    color: darken( #809fff, 15);
+  }
+
+  input {
+    height: 2em;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    outline: none;
+  }
+
+  button {
+    line-height: 2em;
+    border: none;
+    border-radius: 3px;
+    font-size: 15px;
+    color: greenyellow;
+    background: darken( #809fff, 10);
+    transition: color 0.3s linear, background 0.3s linear;
+    outline: none;
+
+    &:hover {
+      color: darken( #809fff, 15);
+      background: greenyellow;
+      cursor: pointer;
+    }
+  }
+}
+
 .information-admin {
   display: flex;
   flex-direction: column;
@@ -161,16 +231,18 @@ $informationWidth: 100%;
     max-width: 30%;
   }
 
-  p {
+  input {
     line-height: 45px;
     color: #0341fc;
     margin: 10px 0px;
     padding: 0 20px;
     border: 1px solid darken(#4290f5, 20 );
     border-radius: 10px;
+    outline: none;
   }
 
   button {
+    width: 15%;
     margin-top: 5px;
     line-height: 2em;
     border: none;

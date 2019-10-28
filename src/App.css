@@ -30,7 +30,7 @@
       flex-basis: 20%;
   max-width: 20%;
   max-height: 10em;
-  margin-top: 70px;
+  margin-left: 10px;
   padding: 0px;
   display: inline-block;
   background: #cdd9ff;
@@ -125,6 +125,98 @@
   margin-top: 70px;
 }
 
+.user-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user-details label {
+  margin-bottom: 5px;
+  color: #3465ff;
+}
+
+.user-details p {
+  height: 1em;
+  margin-bottom: 10px;
+  padding: 5px;
+  outline: none;
+}
+
+.user-details button {
+  line-height: 2em;
+  border: none;
+  border-radius: 3px;
+  font-size: 15px;
+  color: greenyellow;
+  background: #4d78ff;
+  -webkit-transition: color 0.3s linear, background 0.3s linear;
+  transition: color 0.3s linear, background 0.3s linear;
+  outline: none;
+}
+
+.user-details button:hover {
+  color: #3465ff;
+  background: greenyellow;
+  cursor: pointer;
+}
+
+.user-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user-form label {
+  margin-bottom: 5px;
+  color: #3465ff;
+}
+
+.user-form input {
+  height: 2em;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  outline: none;
+}
+
+.user-form button {
+  line-height: 2em;
+  border: none;
+  border-radius: 3px;
+  font-size: 15px;
+  color: greenyellow;
+  background: #4d78ff;
+  -webkit-transition: color 0.3s linear, background 0.3s linear;
+  transition: color 0.3s linear, background 0.3s linear;
+  outline: none;
+}
+
+.user-form button:hover {
+  color: #3465ff;
+  background: greenyellow;
+  cursor: pointer;
+}
+
 .information-admin {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -200,16 +292,18 @@
   max-width: 30%;
 }
 
-.information-user-selected p {
+.information-user-selected input {
   line-height: 45px;
   color: #0341fc;
   margin: 10px 0px;
   padding: 0 20px;
   border: 1px solid #0b5cc6;
   border-radius: 10px;
+  outline: none;
 }
 
 .information-user-selected button {
+  width: 15%;
   margin-top: 5px;
   line-height: 2em;
   border: none;

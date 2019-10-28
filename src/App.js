@@ -15,12 +15,7 @@ const App = () => {
 
   const switchToAdmin = () => {
     const adminPassword = prompt("Enter admin`s password");
-    if (adminPassword === '1111') {
-      setRole('admin')
-    } else { 
-      // setRole(null) 
-      alert('You have no permission')
-    };
+    adminPassword === '1111' ? setRole('admin') : alert('You have no permission');
   }
 
   useEffect( () => {}, [role] )

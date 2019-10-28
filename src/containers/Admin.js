@@ -1,29 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import UserForm from '../common/UserForm';
 
 const Admin = ({addUser}) => {
-    const [ fullName, setFullName] = useState('');
-    const [ birthday, setBirthday ] = useState('');
-    const [ direction, setDirection ] = useState('');
-    const [ email, setEmail ] = useState('');
-    const [ phone, setPhone ] = useState('');
+    const [fields, setFields] = useState({
+        id: Date.now(),
+        fullName: '',
+        birthday: '',
+        direction: '',
+        email: '',
+        phone: ''
+    });
+    const [ newUser, setNewUser ] = useState({});
 
-    const user = {
-        id: Date.now().toString(),
-        fullName,
-        birthday,
-        direction,
-        email,
-        phone
+    const onChangeField = fields => {
+        setNewUser(fields);
     }
 
+    useEffect(() => {
+        onChangeField(fields);
+    }, [fields]);
+
     const handleSubmit = () => {
-        if( fullName && birthday && direction && email && phone) {
-            addUser(user);
-            setFullName('');
-            setBirthday('');
-            setDirection('');
-            setEmail('');
-            setPhone('');
+        setNewUser(fields);
+        const { fullName, birthday, direction, email, phone } = newUser;
+        if( fullName && birthday && direction && email && phone ) {
+            addUser(newUser);
+            alert('New user successfully added');
         } else {
             alert('Fill all fields');
         }
@@ -31,16 +33,7 @@ const Admin = ({addUser}) => {
 
     return(
         <div className="information-admin">
-            <label>Name</label>
-            <input onChange={ (e) => setFullName(e.target.value)} value={fullName} type="text" />
-            <label>Birthday</label>
-            <input onChange={(e) => setBirthday(e.target.value)} value={birthday} type="text" />
-            <label>Direction</label>
-            <input onChange={(e) => setDirection(e.target.value)} value={direction} type="text" />
-            <label>Email</label>
-            <input onChange={(e) => setEmail(e.target.value)} value={email} type="text" />
-            <label>Phone</label>
-            <input onChange={(e) => setPhone(e.target.value)} value={phone} type="text" />
+            <UserForm user={fields} onChangeField={onChangeField} />
             <button onClick={handleSubmit}>Submit</button>
         </div>
     )

@@ -21,6 +21,10 @@ const Information = ({role}) => {
     const handleSetUser = (user) => {
         setUser(user);
         setSearchValue(searchValue);
+        const users = JSON.parse(localStorage.getItem('users'));
+        const index = users.map( e => e.id ).indexOf(user.id);
+        users[index] = user;
+        setUsers(users);
     };
 
     const addUser = newUser => {
@@ -37,7 +41,7 @@ const Information = ({role}) => {
         } else alert('You have no permission');
     }
 
-    const handleSetSearchValue = value=> {
+    const handleSetSearchValue = value => {
         setSearchValue(value);
     }
 
@@ -60,7 +64,9 @@ const Information = ({role}) => {
                 </div>  
             </div>
             <div className="selected-user-root">
-                {(user && role !== 'admin' ) && <UserInfo deleteUser={deleteUser} user={user} handleSetUser={handleSetUser} />}
+                {(user && role !== 'admin' ) && 
+                    <UserInfo deleteUser={deleteUser} addUser={addUser}
+                 user={user} handleSetUser={handleSetUser} />}
             </div>
             <div className="information-admin-root">
                 {role === 'admin' && <Admin addUser={addUser} />}
