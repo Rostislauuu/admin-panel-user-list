@@ -3,8 +3,6 @@ import React from 'react';
 const UserDetails = ({user}) => {
     return(
         <div className="user-details">
-            <label>Name</label>
-            <p>{user.fullName}</p>
             <label>Birthday</label>
             <p>{user.birthday}</p>
             <label>Direction</label>

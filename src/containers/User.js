@@ -6,14 +6,14 @@ const User = ({ user, handleSetUser }) => {
     };
     
     return (
-        <div className="col-1-4 col-1-2">
+        <div className="col-1-4 col-1-2" onClick={getUser}>
             <div className="user">
                 <div className="user-photo">
                     <img alt="Vakoms"
-                        src="http://www.usupport.in.ua/uploads/company/picture/302/view_vakoms_logo_.png" />
+                        src={user.img} />
                 </div>
                 <div className="user-name">
-                    <p onClick={getUser}>{user.fullName}</p>
+                    <p>{user.fullName}</p>
                 </div>
             </div>
         </div>

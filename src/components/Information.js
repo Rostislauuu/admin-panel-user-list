@@ -20,6 +20,9 @@ const Information = ({role}) => {
 
     const handleSetUser = (user) => {
         setUser(user);
+        if( !user ){
+            return;
+        }
         setSearchValue(searchValue);
         const users = JSON.parse(localStorage.getItem('users'));
         const index = users.map( e => e.id ).indexOf(user.id);
