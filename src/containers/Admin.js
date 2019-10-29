@@ -25,7 +25,7 @@ const Admin = ({addUser}) => {
         const { fullName, birthday, direction, email, phone } = newUser;
         if( fullName && birthday && direction && email && phone ) {
             addUser(newUser);
-            setFields(null)
+            setFields(null);
             alert('New user successfully added');
         } else {
             alert('Fill all fields');

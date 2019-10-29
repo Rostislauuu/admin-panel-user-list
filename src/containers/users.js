@@ -1,3 +1,14 @@
+import Julia from '../assets/Julia.jpg';
+import Khrystyna from '../assets/Khrystyna_Liudkevych.jpg';
+import Dima from '../assets/Naumenko.jpg';
+import Ihor from '../assets/Ihor_Choliy.jpeg';
+import Nazar from '../assets/Nazarii_Pyndus.JPG';
+import  Serhiy from '../assets/Sergio.jpg';
+import Tanya from '../assets/Tetiana_Sementsiv_OcDt7Re.jpg';
+import Vitalik from '../assets/Polinyk.jpg';
+import Artur from '../assets/Artur_Danch.JPG';
+import Taras from '../assets/Taras_Tataryn_dm5g6OB.jpg';
+
 export const allUsers = [
     {
         id: 1,
@@ -15,7 +26,7 @@ export const allUsers = [
         direction: 'Front-end',
         email: 'juliasavych@gmail.com',
         phone: '0959115522',
-        img: 'https://vkpm.vakoms.com/media/profile_photos/Julia.jpg'
+        img: Julia
     }
     ,
     {
@@ -25,7 +36,7 @@ export const allUsers = [
         direction: 'HR',
         email: 'chrisliudkevych@gmail.com',
         phone: '0959115522',
-        img: 'https://vkpm.vakoms.com/media/profile_photos/Khrystyna_Liudkevych.jpg'
+        img: Khrystyna
     }
     ,
     {
@@ -35,7 +46,7 @@ export const allUsers = [
         direction: 'Full-Stack',
         email: 'dmitrynaumenko@gmail.com',
         phone: '0959115522',
-        img: 'https://vkpm.vakoms.com/media/profile_photos/2_2_eSbSz1h.jpg'
+        img: Dima
     }
     ,
     {
@@ -45,7 +56,7 @@ export const allUsers = [
         direction: 'Design',
         email: 'ihorcholiy@gmail.com',
         phone: '0959115522',
-        img: 'https://vkpm.vakoms.com/media/profile_photos/Ihor_Choliy.jpeg'
+        img: Ihor
     }
     ,
     {
@@ -55,7 +66,7 @@ export const allUsers = [
         direction: 'Front-end',
         email: 'nazariipyndus@gmail.com',
         phone: '0959115522',
-        img: 'https://vkpm.vakoms.com/media/profile_photos/Nazarii_Pyndus.JPG'
+        img: Nazar
     }
     ,
     {
@@ -75,7 +86,7 @@ export const allUsers = [
         direction: 'Front-end',
         email: 'serhiykorynevych@gmail.com',
         phone: '0959115522',
-        img: 'https://vkpm.vakoms.com/media/profile_photos/3_1_lCHh53g.jpg'
+        img: Serhiy
     }
     ,
     {
@@ -85,7 +96,7 @@ export const allUsers = [
         direction: 'English Teacher',
         email: 'tatianasementsiv@gmail.com',
         phone: '0959115522',
-        img: 'https://vkpm.vakoms.com/media/profile_photos/Tetiana_Sementsiv_OcDt7Re.jpg'
+        img: Tanya
     }
     ,
     {
@@ -95,7 +106,7 @@ export const allUsers = [
         direction: 'Front-end',
         email: 'vitaliypolinyk@gmail.com',
         phone: '0959115522',
-        img: 'https://vkpm.vakoms.com/media/profile_photos/1_2_13L5Ju3.jpg'
+        img: Vitalik
     }
     ,
     {
@@ -105,7 +116,7 @@ export const allUsers = [
         direction: 'Front-end',
         email: 'arturdanch@gmail.com',
         phone: '0959115522',
-        img: 'https://vkpm.vakoms.com/media/profile_photos/Artur_Danch.JPG'
+        img: Artur
     }
     ,
     {
@@ -115,6 +126,6 @@ export const allUsers = [
         direction: 'Front-end',
         email: 'tarastataryn@gmail.com',
         phone: '0959115522',
-        img: 'https://vkpm.vakoms.com/media/profile_photos/Taras_Tataryn_dm5g6OB.jpg'
+        img: Taras
     }
 ]

@@ -4,7 +4,6 @@ import UserForm from '../common/UserForm';
 import UserDetails from '../common/UserDetails';
 
 const UserInfo = ({ user, handleSetUser, deleteUser }) => {
-    console.log(user);
     const [ newUser, setNewUser ] = useState({});
     const [ isEditing, setIsEditing ] = useState(false);
 
@@ -22,25 +21,25 @@ const UserInfo = ({ user, handleSetUser, deleteUser }) => {
         deleteUser(user.id);
     }
 
+    const onChangeField = fields => {
+        setNewUser(fields);
+    }
+
     const handleSubmit = () => {
         handleSetUser(newUser);
         setIsEditing(false);
-    }
-
-    const onChangeField = fields => {
-        setNewUser(fields);
     }
 
     return (
         <div className="information-user-selected">
             {!isEditing && 
                 <div className="user-details-not-editing"> 
-                <div className="user-details-img">
-                    <img alt="Vakoms"
-                        src={user.img} />
-                    <label style={{ color: '#606060' }}>Name</label>
-                    <p>{user.fullName}</p>
-                </div>
+                    <div className="user-details-img">
+                        <img alt="Vakoms"
+                            src={user.img} />
+                        <label style={{ color: '#606060' }}>Name</label>
+                        <p>{user.fullName}</p>
+                    </div>
                 <div className="user-details-buttons">
                     <UserDetails user={user} />
                     <div className="buttons">
@@ -53,8 +52,8 @@ const UserInfo = ({ user, handleSetUser, deleteUser }) => {
             }
             {isEditing && 
                 <div className="user-form">
-                <UserForm user={user} onChangeField={onChangeField} />
-                <button onClick={handleSubmit}>Submit</button>
+                    <UserForm user={user} onChangeField={onChangeField} />
+                    <button onClick={handleSubmit}>Submit</button>
                 </div>}
         </div>
     )
