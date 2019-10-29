@@ -15,7 +15,6 @@
 }
 
 .header-image {
-  width: 100%;
   max-width: 120px;
 }
 
@@ -31,7 +30,6 @@
   max-width: 20%;
   max-height: 14em;
   margin-left: 10px;
-  padding: 0px;
   color: white;
   background: #2196f3;
   border-radius: 5px;
@@ -102,9 +100,6 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
@@ -142,6 +137,7 @@
           flex-direction: column;
   border: 1px solid #0b5cc6;
   border-radius: 5px;
+  background: #eeeeee;
 }
 
 .user-details-img img {
@@ -185,6 +181,18 @@
           align-items: center;
   border: 1px solid #0b5cc6;
   border-radius: 5px;
+  background: #eeeeee;
+}
+
+.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.buttons button {
+  width: 30%;
+  margin-right: 10px;
 }
 
 .user-details {
@@ -205,7 +213,6 @@
 
 .user-details label {
   margin-bottom: 5px;
-  color: #8d8d8d;
 }
 
 .user-details p {
@@ -215,19 +222,8 @@
   outline: none;
 }
 
-.buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.buttons button {
-  width: 30%;
-  margin-right: 10px;
-}
-
 .information-user-selected label {
-  color: #8d8d8d;
+  color: #606060;
   margin-bottom: 5px;
 }
 
@@ -394,8 +390,6 @@
 .user-name p {
   color: #0b5cc6;
   font-size: 20px;
-  -webkit-transition: color 0.7s ease;
-  transition: color 0.7s ease;
 }
 
 @media (max-width: 1040px) {
