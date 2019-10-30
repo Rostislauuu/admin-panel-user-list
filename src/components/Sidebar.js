@@ -4,11 +4,15 @@ const Sidebar = ({ switchToUser, switchToAdmin } ) => {
     return(
         <nav className="sidebar"> 
             <ul>
-                <li className="sidebar-user">
-                    <p onClick={switchToUser}>Users</p>
+                <li className="sidebar-user" onClick={switchToUser}>
+                    <p>
+                        Users
+                    </p>
                 </li>
-                <li className="sidebar-admin">
-                    <p onClick={switchToAdmin}>Admin</p>
+                <li className="sidebar-admin" onClick={switchToAdmin}>
+                    <p>
+                        Admin
+                    </p>
                 </li>
             </ul>
         </nav>

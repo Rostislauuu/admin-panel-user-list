@@ -21,28 +21,31 @@ const Information = ({role}) => {
     const handleSetUser = (user) => {
         setUser(user);
 
-        if ( !user ) {
+        if (!user) {
             return;
+        } else {
+            const users = JSON.parse( localStorage.getItem('users') );
+            const index = users.map( e => e.id ).indexOf(user.id);
+            users[index] = user;
+
+            setUsers(users);
+            setSearchValue(searchValue);
         }
 
-        setSearchValue(searchValue);
-        const users = JSON.parse(localStorage.getItem('users'));
-        const index = users.map( e => e.id ).indexOf(user.id);
-        users[index] = user;
-        setUsers(users);
     };
 
-    const addUser = newUser => {
+    const handleAddUser = newUser => {
         setUsers( [...users, newUser] );
     }
 
-    const deleteUser = id => {
-        const adminPassword = prompt('Enter admin`s password');
+    const correctAdminPass = '1111';
+    const handleDeleteUser = id => {
+        const adminPass = prompt('Enter admin`s password');
 
-        if (adminPassword === '1111') {
-            setUsers(users.filter(user => {
+        if ( adminPass === correctAdminPass ) {
+            setUsers( users.filter( user => {
                 return user.id !== id
-            }));
+            } ));
             setUser(null);
         } else {
             alert('You have no permission');
@@ -62,23 +65,26 @@ const Information = ({role}) => {
         return item.props.user.fullName.toLowerCase().includes( searchValue.toLowerCase() );
     }) 
 
+    const userRole = 'user';
+    const adminRole = 'admin';
+
     return(
         <div className="information-root">
             <div className="user-search-root">
-                {( role === 'user' && !user )  && 
+                {( role === userRole && !user )  && 
                 <Search handleSetSearchValue={handleSetSearchValue} searchValue={searchValue} />
                 }
                 <div className="information-user-root" >
-                    {( role === 'user' && !user ) && filteredList}
+                    {( role === userRole && !user ) && filteredList}
                 </div>  
             </div>
             <div className="selected-user-root">
-                {(user && role !== 'admin' ) && 
-                    <UserInfo deleteUser={deleteUser} addUser={addUser}
+                {( user && role !== adminRole ) && 
+                    <UserInfo handleDeleteUser={handleDeleteUser} handleAddUser={handleAddUser}
                  user={user} handleSetUser={handleSetUser} />}
             </div>
             <div className="information-admin-root">
-                {role === 'admin' && <Admin addUser={addUser} />}
+                { role === adminRole && <Admin handleAddUser={handleAddUser} />}
             </div>
         </div>
     )
