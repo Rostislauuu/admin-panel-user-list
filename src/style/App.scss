@@ -25,7 +25,7 @@
   max-width: 20%;
   max-height: 14em;
   margin-left: 10px;
-  color: $whiteText;
+  color: $textColor;
   background: $navAndButtonBg;
   border-radius: 5px;
 }
@@ -37,8 +37,8 @@
 
 .sidebar-user {
   line-height: 7em;
-  border-bottom: 1px solid $whiteText;
-  border-radius: 2px;
+  border-bottom: 1px solid #212121;
+
   transition: $bgTransition;
 
   &:hover {
@@ -57,7 +57,6 @@
 
 .sidebar-admin {
   line-height: 7em;
-  border-radius: 5px; 
   transition: $bgTransition;
 
   &:hover {
@@ -113,7 +112,7 @@
 
   img {
     margin-top: 10px;
-    width: 70%;
+    width: 50%;
     height: 70%;
     align-self: center;
   }
@@ -186,7 +185,7 @@
     border: none;
     border-radius: 3px;
     font-size: 15px;
-    color: $whiteText;
+    color: $textColor;
     background: $navAndButtonBg;
     transition: $bgTransition;
     outline: none;
@@ -221,7 +220,7 @@
     border: none;
     border-radius: 3px;
     font-size: 15px;
-    color: $whiteText;
+    color: $textColor;
     background: $navAndButtonBg;
     transition: $bgTransition;
     outline: none;
@@ -272,23 +271,23 @@
 }
 
 .user-photo {
-  padding: 5px;
+  padding: 8px;
   max-width: 100%;
   min-height: 200px;
-  border-bottom: $searchAndUserBorder;
   display: flex;
   justify-content: center;
   align-items: center;
 
   img {
     height: 200px;
-    width: 100%;
+    width: 80%;
     border-radius: 9px;
   }
 }
 
 .user-name {
   min-height: 20px;
+  margin-bottom: -10px;
   padding: 15px 0;
   display: flex;
   justify-content: center;

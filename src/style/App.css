@@ -30,8 +30,8 @@
   max-width: 20%;
   max-height: 14em;
   margin-left: 10px;
-  color: #ffffff;
-  background: #2196f3;
+  color: #212121;
+  background: #00FFFF;
   border-radius: 5px;
 }
 
@@ -42,14 +42,13 @@
 
 .sidebar-user {
   line-height: 7em;
-  border-bottom: 1px solid #ffffff;
-  border-radius: 2px;
+  border-bottom: 1px solid #212121;
   -webkit-transition: background 0.3s linear;
   transition: background 0.3s linear;
 }
 
 .sidebar-user:hover {
-  background: #0069c0;
+  background: #00cbcc;
 }
 
 .sidebar-user p {
@@ -63,13 +62,12 @@
 
 .sidebar-admin {
   line-height: 7em;
-  border-radius: 5px;
   -webkit-transition: background 0.3s linear;
   transition: background 0.3s linear;
 }
 
 .sidebar-admin:hover {
-  background: #0069c0;
+  background: #00cbcc;
 }
 
 .sidebar-admin p {
@@ -135,14 +133,14 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: 1px solid #0b5cc6;
+  border: 1px solid #00FFFF;
   border-radius: 5px;
   background: #eeeeee;
 }
 
 .user-details-img img {
   margin-top: 10px;
-  width: 70%;
+  width: 50%;
   height: 70%;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -179,7 +177,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid #0b5cc6;
+  border: 1px solid #00FFFF;
   border-radius: 5px;
   background: #eeeeee;
 }
@@ -239,15 +237,15 @@
   border: none;
   border-radius: 3px;
   font-size: 15px;
-  color: #ffffff;
-  background: #2196f3;
+  color: #212121;
+  background: #00FFFF;
   -webkit-transition: background 0.3s linear;
   transition: background 0.3s linear;
   outline: none;
 }
 
 .information-user-selected button:hover {
-  background: #0069c0;
+  background: #00cbcc;
   cursor: pointer;
 }
 
@@ -284,15 +282,15 @@
   border: none;
   border-radius: 3px;
   font-size: 15px;
-  color: #ffffff;
-  background: #2196f3;
+  color: #212121;
+  background: #00FFFF;
   -webkit-transition: background 0.3s linear;
   transition: background 0.3s linear;
   outline: none;
 }
 
 .information-admin button:hover {
-  background: #0069c0;
+  background: #00cbcc;
   cursor: pointer;
 }
 
@@ -331,7 +329,7 @@
 .search input {
   border-radius: 3px;
   height: 20px;
-  border: 1px solid #0b5cc6;
+  border: 1px solid #00FFFF;
   outline: none;
   padding: 5px;
 }
@@ -339,7 +337,7 @@
 .user {
   margin: 25px 10px 0 8px;
   min-height: 240px;
-  border: 1px solid #0b5cc6;
+  border: 1px solid #00FFFF;
   border-radius: 10px;
   -webkit-transition: -webkit-transform 0.3s linear;
   transition: -webkit-transform 0.3s linear;
@@ -354,10 +352,9 @@
 }
 
 .user-photo {
-  padding: 5px;
+  padding: 8px;
   max-width: 100%;
   min-height: 200px;
-  border-bottom: 1px solid #0b5cc6;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -371,12 +368,13 @@
 
 .user-photo img {
   height: 200px;
-  width: 100%;
+  width: 80%;
   border-radius: 9px;
 }
 
 .user-name {
   min-height: 20px;
+  margin-bottom: -10px;
   padding: 15px 0;
   display: -webkit-box;
   display: -ms-flexbox;
