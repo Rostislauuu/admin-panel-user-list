@@ -337,7 +337,7 @@
 }
 
 .user {
-  margin: 25px 10px 10px 8px;
+  margin: 25px 10px 0 8px;
   min-height: 240px;
   border: 1px solid #0b5cc6;
   border-radius: 10px;
@@ -372,7 +372,7 @@
 .user-photo img {
   height: 200px;
   width: 100%;
-  border-radius: 9px 9px 0 0;
+  border-radius: 9px;
 }
 
 .user-name {
