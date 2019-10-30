@@ -368,7 +368,7 @@
 
 .user-photo img {
   height: 200px;
-  width: 80%;
+  width: 150px;
   border-radius: 9px;
 }
 
@@ -423,6 +423,10 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+  .user-photo img {
+    width: 100px;
+    height: 120px;
   }
 }
 /*# sourceMappingURL=App.css.map */

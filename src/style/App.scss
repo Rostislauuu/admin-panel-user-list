@@ -280,7 +280,7 @@
 
   img {
     height: 200px;
-    width: 80%;
+    width: 150px;
     border-radius: 9px;
   }
 }
@@ -331,5 +331,12 @@
 
   .information-user-root {
     justify-content: center;
+  }
+
+  .user-photo {
+    img {
+      width: 100px;
+      height: 120px;
+    }
   }
 }
