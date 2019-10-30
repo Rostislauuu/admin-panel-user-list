@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import UserForm from '../common/UserForm';
 
-const Admin = ({addUser}) => {
-    const [fields, setFields] = useState({
+const Admin = ({handleAddUser}) => {
+    const [ fields, setFields ] = useState({
         id: Date.now(),
         fullName: '',
         birthday: '',
@@ -12,22 +12,21 @@ const Admin = ({addUser}) => {
     });
     const [ newUser, setNewUser ] = useState({});
 
-    const onChangeField = fields => {
+    const handleChangeField = fields => {
         setNewUser(fields);
     }
 
-    useEffect(() => {
-        onChangeField(fields);
-    }, [fields]);
+    useEffect( () => {
+        handleChangeField(fields);
+    }, [fields] );
 
     const handleSubmit = () => {
         setNewUser(fields);
         const { fullName, birthday, direction, email, phone } = newUser;
 
         if( fullName && birthday && direction && email && phone ) {
-            addUser(newUser);
-            setFields(null);
-            alert('New user successfully added');
+            handleAddUser(newUser);
+            alert('You added new user');
         } else {
             alert('Fill all fields');
         }
@@ -36,8 +35,10 @@ const Admin = ({addUser}) => {
 
     return(
         <div className="information-admin">
-            <UserForm user={fields} onChangeField={onChangeField} />
-            <button onClick={handleSubmit}>Submit</button>
+            <UserForm user={fields} handleChangeField={handleChangeField} />
+            <button onClick={handleSubmit}>
+                Submit
+            </button>
         </div>
     )
 }

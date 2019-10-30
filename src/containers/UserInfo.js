@@ -3,25 +3,25 @@ import React, { useState, useEffect } from 'react';
 import UserForm from '../common/UserForm';
 import UserDetails from '../common/UserDetails';
 
-const UserInfo = ({ user, handleSetUser, deleteUser }) => {
+const UserInfo = ({ user, handleSetUser, handleDeleteUser }) => {
     const [ newUser, setNewUser ] = useState({});
     const [ isEditing, setIsEditing ] = useState(false);
 
-    const editUser = () => {
+    const handleSetEditing = () => {
         setIsEditing(!isEditing);
     }
 
-    useEffect(() => {}, [isEditing]);
+    useEffect( () => {}, [isEditing] );
 
     const backToList = () => {
         handleSetUser(null);
     }
 
     const onDeleteUser = () => {
-        deleteUser(user.id);
+        handleDeleteUser(user.id);
     }
 
-    const onChangeField = fields => {
+    const handleChangeField = fields => {
         setNewUser(fields);
     }
 
@@ -35,25 +35,36 @@ const UserInfo = ({ user, handleSetUser, deleteUser }) => {
             {!isEditing && 
                 <div className="user-details-not-editing"> 
                     <div className="user-details-img">
-                        <img alt="Vakoms"
-                            src={user.img} />
-                        <label>Name</label>
-                        <p>{user.fullName}</p>
+                        <img alt="Vakoms" src={user.img} />
+                        <label>
+                            Name
+                        </label>
+                        <p>
+                            {user.fullName}
+                        </p>
                     </div>
                 <div className="user-details-buttons">
                     <UserDetails user={user} />
                     <div className="buttons">
-                        <button onClick={backToList}>Back</button>
-                        <button onClick={editUser}>Update</button>
-                        <button onClick={onDeleteUser}>Delete</button>
+                        <button onClick={backToList}>
+                            Back
+                        </button>
+                        <button onClick={handleSetEditing}>
+                            Update
+                        </button>
+                        <button onClick={onDeleteUser}>
+                            Delete
+                        </button>
                     </div>
                 </div>
             </div>
             }
             {isEditing && 
                 <div className="user-form">
-                    <UserForm user={user} onChangeField={onChangeField} />
-                    <button onClick={handleSubmit}>Submit</button>
+                <UserForm user={user} handleChangeField={handleChangeField} />
+                    <button onClick={handleSubmit}>
+                        Submit
+                    </button>
                 </div>}
         </div>
     )
