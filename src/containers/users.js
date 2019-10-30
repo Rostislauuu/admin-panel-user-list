@@ -31,7 +31,7 @@ export const allUsers = [
     ,
     {
         id: 3,
-        fullName: 'Christina Liudkevych',
+        fullName: 'Cris Liudkevych',
         birthday: '01.01.2000',
         direction: 'HR',
         email: 'chrisliudkevych@gmail.com',
