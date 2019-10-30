@@ -37,7 +37,7 @@ const UserInfo = ({ user, handleSetUser, deleteUser }) => {
                     <div className="user-details-img">
                         <img alt="Vakoms"
                             src={user.img} />
-                        <label style={{ color: '#606060' }}>Name</label>
+                        <label>Name</label>
                         <p>{user.fullName}</p>
                     </div>
                 <div className="user-details-buttons">
