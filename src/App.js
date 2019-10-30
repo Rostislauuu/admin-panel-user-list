@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Information from './components/Information';
 
-import './App.css';
+import './style/App.css';
 
 const App = () => {
   const [ role, setRole ] = useState(null);

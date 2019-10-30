@@ -6,7 +6,7 @@ const User = ({ user, handleSetUser }) => {
     };
     
     return (
-        <div className="col-1-4 col-1-2" onClick={getUser}>
+        <div className="col-1-6 col-1-4 col-1-3 col-1-2" onClick={getUser}>
             <div className="user">
                 <div className="user-photo">
                     <img alt="Vakoms"
