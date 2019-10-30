@@ -23,6 +23,7 @@ const Admin = ({addUser}) => {
     const handleSubmit = () => {
         setNewUser(fields);
         const { fullName, birthday, direction, email, phone } = newUser;
+
         if( fullName && birthday && direction && email && phone ) {
             addUser(newUser);
             setFields(null);
@@ -30,6 +31,7 @@ const Admin = ({addUser}) => {
         } else {
             alert('Fill all fields');
         }
+        
     }
 
     return(

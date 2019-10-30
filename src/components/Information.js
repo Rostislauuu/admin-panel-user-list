@@ -20,9 +20,11 @@ const Information = ({role}) => {
 
     const handleSetUser = (user) => {
         setUser(user);
-        if( !user ){
+
+        if ( !user ) {
             return;
         }
+
         setSearchValue(searchValue);
         const users = JSON.parse(localStorage.getItem('users'));
         const index = users.map( e => e.id ).indexOf(user.id);
@@ -36,12 +38,16 @@ const Information = ({role}) => {
 
     const deleteUser = id => {
         const adminPassword = prompt('Enter admin`s password');
+
         if (adminPassword === '1111') {
             setUsers(users.filter(user => {
                 return user.id !== id
             }));
             setUser(null);
-        } else alert('You have no permission');
+        } else {
+            alert('You have no permission');
+        }
+        
     }
 
     const handleSetSearchValue = value => {
