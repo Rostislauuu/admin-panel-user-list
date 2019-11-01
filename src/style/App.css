@@ -103,7 +103,6 @@
 
 .sidebar-user {
   line-height: 7em;
-  border-bottom: 1px solid #212121;
   -webkit-transition: background 0.3s linear;
   transition: background 0.3s linear;
 }

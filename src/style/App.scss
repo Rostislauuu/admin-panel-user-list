@@ -82,8 +82,6 @@
 
 .sidebar-user {
   line-height: 7em;
-  border-bottom: 1px solid #212121;
-
   transition: $bgTransition;
 
   &:hover {
@@ -129,7 +127,7 @@
   font-size: 13px;
 }
 
-.information-user-root{
+.information-user-root {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

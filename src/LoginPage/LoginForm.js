@@ -1,33 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Redirect } from 'react-router-dom';
 
-const LoginForm = () => {
-    const [ fields, setFields ] = useState({});
-
-    const handleChangeFields = name => event => {
-        const value = event.target.value;
-        setFields( { ...fields, [name]: value } );
-    }
-
+const LoginForm = ({ handleChangeFields, handleSubmit, role } ) => {
     const user = 'user';
     const admin = 'admin';
     const unknown = 'unknown';
     const initialRole = '';
-    const [ role, setRole ] = useState(initialRole);
-    
-
-    const handleSubmit = ()=> {
-        const { login, password } = fields;
-        
-        if ( login === user && password === user ) {
-            setRole(user);
-        } else if( login === admin && password === admin ) {
-            setRole(admin);
-        } else {
-            setRole(unknown);
-        }
-
-    }
 
     return(
         <div className="login-form-root">
