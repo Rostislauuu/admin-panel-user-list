@@ -1,34 +1,61 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { BrowserRouter , Route } from 'react-router-dom';
 
-import Header from './components/Header';
-import Sidebar from './components/Sidebar';
-import Information from './components/Information';
+import Header from './MainPage/Header';
+import Sidebar from './MainPage/Sidebar/SidebarIndex';
+import Information from './MainPage/Information';
+import LoginForm from './LoginPage/LoginForm';
 
 import './style/App.css';
 
 const App = () => {
-  const [ role, setRole ] = useState(null);
+  const user = 'user';
+  const admin = 'admin';
+  const unknown = 'unknown';
+  const initialRole = '';
+  const [role, setRole] = useState(initialRole);
 
-  const switchToUser = () => {
-    setRole('user');
+  const [fields, setFields] = useState({});
+
+  const handleChangeFields = name => event => {
+    const value = event.target.value;
+    setFields({ ...fields, [name]: value });
   }
 
-  const correctAdminPass = '1111';
-  const switchToAdmin = () => {
-    const adminPass = prompt("Enter admin`s password");
-    adminPass === correctAdminPass ? setRole('admin') : setRole('unkown');
-  }
+  const handleSubmit = () => {
+    const { login, password } = fields;
 
-  useEffect( () => {}, [role] )
+    if ( login === user && password === user ) {
+      setRole(user);
+    } else if ( login === admin && password === admin ) {
+      setRole(admin);
+    } else {
+      setRole(unknown);
+    }
+
+  }
 
   return( 
-    <div className="root-box">
-      <Header />
-      <div className="main">
-        <Sidebar switchToUser={switchToUser} switchToAdmin={switchToAdmin}/>
-        <Information role={role} />
-      </div>
-    </div>
+    <BrowserRouter>
+      <Route exact path="/" > 
+        <LoginForm 
+          handleChangeFields={handleChangeFields} 
+          handleSubmit={handleSubmit} 
+          role={role} 
+        />
+      </Route>
+      <Route path="/main-page">
+        <div className="root-box">
+          <Header />
+          <div className="main">
+            <Sidebar 
+              role={role}
+            />
+            <Information />
+          </div>
+        </div>
+      </Route>
+    </BrowserRouter>
   )
 }
 

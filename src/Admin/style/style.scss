@@ -1,0 +1,42 @@
+@import '../../style//variables.scss';
+
+.information-admin-root{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.information-admin {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  label {
+    color: $labelColor;
+    margin-bottom: 5px;
+  }
+
+  input {
+    height: 2em;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    outline: none;
+  }
+
+  button {
+    line-height: 2em;
+    border: none;
+    border-radius: 3px;
+    font-size: 15px;
+    color: $textColor;
+    background: $navAndButtonBg;
+    transition: $bgTransition;
+    outline: none;
+
+    &:hover {
+      background: $navAndButtonHover;
+      cursor: pointer;
+    }
+  }
+}
