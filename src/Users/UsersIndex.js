@@ -1,5 +1,6 @@
 import React from 'react';
 import { renderRoutes } from 'react-router-config';
+import './style/style.css';
 
 import { usersListRoutes } from './UsersRoutes/UsersListRoutes';
 

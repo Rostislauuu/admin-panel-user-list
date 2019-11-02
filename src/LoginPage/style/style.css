@@ -1,0 +1,61 @@
+.login-form-root {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login-form-box {
+  width: 30%;
+  height: 200px;
+  border: 1px solid #00FFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 5px;
+  background: #eeeeee;
+}
+
+.login-form-box input {
+  height: 1.3em;
+  width: 50%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  outline: none;
+}
+
+.login-form-box button {
+  line-height: 2em;
+  width: 15%;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  color: #212121;
+  background: #00FFFF;
+  -webkit-transition: background 0.3s linear;
+  transition: background 0.3s linear;
+  outline: none;
+}
+
+.login-form-box button:hover {
+  background: #00cbcc;
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */

@@ -11,7 +11,7 @@ const UserInfo = () => {
 
     useEffect( () => {
         const fetchData = async () => {
-            const response = await fetch(`https://rostik-vakoms-apo.herokuapp.com/${id}`);
+            const response = await fetch(`https://test-api-vakoms.herokuapp.com/${id}`);
             const data = await response.json();
             setSelectedUser(data);
         }

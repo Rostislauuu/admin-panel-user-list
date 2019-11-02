@@ -3,7 +3,7 @@ import { renderRoutes } from 'react-router-config';
 
 import { mainPageRoutes } from '../routes/MainPageRoutes';
 
-const Information = ({role}) => {
+const Information = () => {
     return(
             <div className="information-root">
                 {renderRoutes(mainPageRoutes)}

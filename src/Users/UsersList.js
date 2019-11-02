@@ -4,7 +4,7 @@ import User from  './User';
 import Search from './Search/Search';
 
 const useFetch = url => {
-    const [ users, setUsers ] = useState([]);
+    const [ users, setUsers ] = useState([ ]);
 
     useEffect( () => {
         const fetchData = async () => {
@@ -21,7 +21,7 @@ const useFetch = url => {
 
 export const UsersList = () => {
     const emptyString = '';
-    const fetchedData = useFetch("https://rostik-vakoms-apo.herokuapp.com/");
+    const fetchedData = useFetch("https://test-api-vakoms.herokuapp.com/");
     const [ users, setUsers ] = useState( fetchedData || emptyString );
     
     useEffect ( () => {

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+import './style/style.css';
 
 const LoginForm = ({ handleChangeFields, handleSubmit, role } ) => {
     const user = 'user';

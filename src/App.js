@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter , Route } from 'react-router-dom';
 
 import Header from './MainPage/Header';
-import Sidebar from './MainPage/Sidebar';
+import Sidebar from './MainPage/Sidebar/SidebarIndex';
 import Information from './MainPage/Information';
 import LoginForm from './LoginPage/LoginForm';
 
@@ -38,15 +38,20 @@ const App = () => {
   return( 
     <BrowserRouter>
       <Route exact path="/" > 
-        <LoginForm handleChangeFields={handleChangeFields} handleSubmit={handleSubmit} 
-        role={role} />
+        <LoginForm 
+          handleChangeFields={handleChangeFields} 
+          handleSubmit={handleSubmit} 
+          role={role} 
+        />
       </Route>
       <Route path="/main-page">
         <div className="root-box">
           <Header />
           <div className="main">
-            <Sidebar role={role} />
-            <Information role={role} />
+            <Sidebar 
+              role={role}
+            />
+            <Information />
           </div>
         </div>
       </Route>

@@ -1,0 +1,66 @@
+@import '../../style/variables.scss';
+
+.sidebar-root-box {
+  flex-basis: 20%;
+  max-width: 20%;
+}
+
+.sidebar-user-root {
+  max-height: 7em;
+  color: $textColor;
+  background: $navAndButtonBg;
+  border-radius: 5px;
+}
+
+.sidebar-user-root ul {
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-admin-root {
+  max-height: 14em;
+  color: $textColor;
+  background: $navAndButtonBg;
+  border-radius: 5px;
+}
+
+.sidebar-admin-root ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-user {
+  line-height: 7em;
+  transition: $bgTransition;
+
+  &:hover {
+    background: $navAndButtonHover;
+  }
+
+  p {
+    text-align: center;
+    text-transform: uppercase;
+
+    &:hover{
+     cursor: pointer;
+    }
+  }
+}
+
+.sidebar-admin {
+  line-height: 7em;
+  transition: $bgTransition;
+
+  &:hover {
+    background: $navAndButtonHover;
+  }
+
+  p {
+    text-align: center;
+    text-transform: uppercase;
+    
+    &:hover {
+     cursor: pointer;
+    }
+  }
+}
