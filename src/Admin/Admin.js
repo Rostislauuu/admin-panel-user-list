@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import UserForm from '../common/UserForm';
+import './style/style.css';
 
 const Admin = ({handleAddUser}) => {
     const [ fields, setFields ] = useState({

@@ -1,12 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const User = ({ user, handleSetUser }) => {
-    const handleGetUser = () => {
-        handleSetUser(user);
-    };
-    
+const User = ({ user }) => {
     return (
-        <div className="col-1-6 col-1-4 col-1-3 col-1-2" onClick={handleGetUser}>
+        <Link 
+            to={`/main-page/users/${user.id}`} 
+            className="col-1-6 col-1-4 col-1-3 col-1-2" 
+            style={{ textDecoration: 'none', color: '#212121' }}
+        >
             <div className="user">
                 <div className="user-photo">
                     <img alt="Vakoms" src={user.img} />
@@ -17,7 +18,7 @@ const User = ({ user, handleSetUser }) => {
                     </p>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
 
