@@ -1,7 +1,9 @@
 $textColor: #212121;
-$navAndButtonBg: #00FFFF;
-$navAndButtonHover: #00cbcc;
-$searchAndUserBorder: 1px solid #00FFFF;
+$whiteColor: #ffffff;
+$navAndButtonBg: #97b7ea;
+$navAndButtonHover: #c9e9ff;
+$searchAndUserBorder: 1px solid $navAndButtonBg;
+$sidebarAdminBorder: 1px solid #000000;
 $userDetailsBg: #eeeeee;
 $labelColor: #606060;
 $bgTransition: background 0.3s linear;

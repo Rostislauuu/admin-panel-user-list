@@ -1,5 +1,5 @@
 import UsersList from '../UsersList';
-import UserInfo from '../UserInfo';
+import UserInfo from '../UserInfo/UserInfo';
 
 export const usersListRoutes = [
     {
