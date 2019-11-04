@@ -1,33 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { BrowserRouter , Route } from 'react-router-dom';
 
-import Header from './components/Header';
-import Sidebar from './components/Sidebar';
-import Information from './components/Information';
+import Header from './MainPage/Header';
+import Sidebar from './MainPage/Sidebar/SidebarIndex';
+import Information from './MainPage/Information';
+import LoginForm from './LoginPage/LoginForm';
+import RoleContextProvider from './Context/RoleContext';
 
 import './style/App.css';
 
 const App = () => {
-  const [ role, setRole ] = useState(null);
-
-  const switchToUser = () => {
-    setRole('user');
-  }
-
-  const switchToAdmin = () => {
-    const adminPassword = prompt("Enter admin`s password");
-    adminPassword === '1111' ? setRole('admin') : alert('You have no permission');
-  }
-
-  useEffect( () => {}, [role] )
-
   return( 
-    <div className="root-box">
-      <Header />
-      <div className="main">
-        <Sidebar switchToUser={switchToUser} switchToAdmin={switchToAdmin}/>
-        <Information role={role} />
-      </div>
-    </div>
+    <BrowserRouter>
+      <RoleContextProvider>
+        <Route exact path="/" > 
+          <LoginForm />
+        </Route>
+        <Route path="/main-page">
+          <div className="root-box">
+            <Header />
+            <div className="main">
+              <Sidebar />
+              <Information />
+            </div>
+          </div>
+        </Route>
+    </RoleContextProvider>
+  </BrowserRouter>
   )
 }
 
