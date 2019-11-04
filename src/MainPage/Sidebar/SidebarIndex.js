@@ -1,17 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './style/style.css';
 
 import SidebarUser from './SidebarUser/SidebarUser';
 import SidebarAdmin from './SidebarAdmin/SidebarAdmin';
+import { RoleContext } from '../../Context/RoleContext';
 
-const Sidebar = ({role}) => {
-    const user = 'user';
-    const admin = 'admin';
+const Sidebar = () => {
+    const { role, permission } = useContext(RoleContext);
 
     return(
         <div className="sidebar-root-box">  
-            {role === user && <SidebarUser />}
-            {role === admin && <SidebarAdmin />}
+            {role === permission.user && <SidebarUser />}
+            {role === permission.admin && <SidebarAdmin />}
         </div>
     )
 }

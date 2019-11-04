@@ -25,7 +25,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid #97b7ea;
+  border: 2px solid #97b7ea;
 }
 
 .information-admin {
@@ -71,7 +71,7 @@
 }
 
 .information-admin button:hover {
-  background: #6687b8;
+  background: #c9e9ff;
   cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
