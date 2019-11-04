@@ -16,6 +16,17 @@
   display: flex;
 }
 
+.user-editing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    margin-top: 10px;
+  }
+}
+
 .user-details-img {
   margin: 0 5px 0 15px;
   flex-basis: 40%;
@@ -58,11 +69,6 @@
 
 .buttons {
   display: flex;
-
-  button{
-    width: 30%;
-    margin-right: 10px;
-  }
 }
 
 .user-details {
@@ -97,6 +103,8 @@
   }
 
   button {
+    width: 100%;
+    margin-right: 10px;
     line-height: 2em;
     border: none;
     border-radius: 3px;
@@ -118,6 +126,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  input{
+    padding: 5px;
+  }
 }
 
 .user {

@@ -1,25 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Redirect } from 'react-router-dom';
 import './style/style.css';
 
-const LoginForm = ({ handleChangeFields, handleSubmit, role } ) => {
-    const user = 'user';
-    const admin = 'admin';
-    const unknown = 'unknown';
-    const initialRole = '';
+import { RoleContext } from '../Context/RoleContext';
+
+const LoginForm = () => {
+    const { role, permission, handleChangeFields, handleSubmit } = useContext(RoleContext);
 
     return(
         <div className="login-form-root">
-            {(role === initialRole || role === unknown) && 
+            {(role === permission.initialRole || role === permission.unknown) && 
                 <div className="login-form-box">
                     <input type="text" onChange={handleChangeFields('login')} />
                     <input type="text" onChange={handleChangeFields('password')} />
-                    <button onClick={handleSubmit}>
+                <button onClick={handleSubmit}>
                         Submit
                     </button>
             </div>}
-            { role === user && <Redirect to="/main-page" />}
-            { role === admin && <Redirect to="/main-page" />}
+            {role === permission.user && <Redirect to="/main-page" />}
+            {role === permission.admin && <Redirect to="/main-page" />}
         </div>
     )
 }
