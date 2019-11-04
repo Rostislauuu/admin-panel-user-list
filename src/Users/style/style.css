@@ -34,7 +34,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: 1px solid #00FFFF;
+  border: 1px solid #97b7ea;
   border-radius: 5px;
   background: #eeeeee;
 }
@@ -78,7 +78,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid #00FFFF;
+  border: 1px solid #97b7ea;
   border-radius: 5px;
   background: #eeeeee;
 }
@@ -139,14 +139,14 @@
   border-radius: 3px;
   font-size: 15px;
   color: #212121;
-  background: #00FFFF;
+  background: #97b7ea;
   -webkit-transition: background 0.3s linear;
   transition: background 0.3s linear;
   outline: none;
 }
 
 .information-user-selected button:hover {
-  background: #00cbcc;
+  background: #c9e9ff;
   cursor: pointer;
 }
 
@@ -169,7 +169,7 @@
 .user {
   margin: 25px 10px 0 8px;
   min-height: 240px;
-  border: 1px solid #00FFFF;
+  border: 1px solid #97b7ea;
   border-radius: 10px;
   -webkit-transition: -webkit-transform 0.3s linear;
   transition: -webkit-transform 0.3s linear;
@@ -239,7 +239,7 @@
 .search input {
   border-radius: 3px;
   height: 20px;
-  border: 1px solid #00FFFF;
+  border: 1px solid #97b7ea;
   outline: none;
   padding: 5px;
 }

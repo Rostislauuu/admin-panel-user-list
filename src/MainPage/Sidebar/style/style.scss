@@ -1,4 +1,4 @@
-@import '../../style/variables.scss';
+@import '../../../style/variables.scss';
 
 .sidebar-root-box {
   flex-basis: 20%;
@@ -10,6 +10,7 @@
   color: $textColor;
   background: $navAndButtonBg;
   border-radius: 5px;
+  margin-left: 10px;
 }
 
 .sidebar-user-root ul {
@@ -22,6 +23,7 @@
   color: $textColor;
   background: $navAndButtonBg;
   border-radius: 5px;
+  margin-left: 10px;
 }
 
 .sidebar-admin-root ul {
@@ -49,6 +51,7 @@
 
 .sidebar-admin {
   line-height: 7em;
+  border-top: $sidebarAdminBorder;
   transition: $bgTransition;
 
   &:hover {

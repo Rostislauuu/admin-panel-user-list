@@ -21,7 +21,7 @@ const useFetch = url => {
 
 export const UsersList = () => {
     const emptyString = '';
-    const fetchedData = useFetch("https://test-api-vakoms.herokuapp.com/");
+    const fetchedData = useFetch("http://test-api-vakoms.herokuapp.com/users");
     const [ users, setUsers ] = useState( fetchedData || emptyString );
     
     useEffect ( () => {
