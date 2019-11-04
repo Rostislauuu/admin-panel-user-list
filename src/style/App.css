@@ -30,17 +30,59 @@
   max-width: 80%;
 }
 
+@media (max-width: 1600px) {
+  .new-user-form {
+    width: 50%;
+  }
+}
+
 @media (max-width: 1200px) {
   .col-1-4 {
     -ms-flex-preferred-size: 25%;
         flex-basis: 25%;
     max-width: 25%;
   }
+  .login-form-box button {
+    width: 30%;
+  }
+  .user-details-img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .user-details-img img {
+    width: 65%;
+    height: 65%;
+  }
+  .new-user-form {
+    width: 60%;
+  }
 }
 
 @media (max-width: 1040px) {
   .user-name p {
     font-size: 15px;
+  }
+  .user-details-img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .user-details-img img {
+    width: 70%;
+    height: 70%;
   }
 }
 
@@ -53,9 +95,33 @@
   p {
     font-size: 20px;
   }
+  .login-form-box {
+    width: 40%;
+  }
+  .user-details-img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .user-details-img img {
+    width: 70%;
+    height: 70%;
+  }
+  .new-user-form button {
+    width: 25%;
+  }
 }
 
 @media (max-width: 750px) {
+  .login-form-box {
+    width: 50%;
+  }
   .col-1-2 {
     -ms-flex-preferred-size: 38%;
         flex-basis: 38%;
@@ -67,8 +133,29 @@
             justify-content: center;
   }
   .user-photo img {
-    width: 100px;
-    height: 120px;
+    width: 180px;
+    height: 180px;
+  }
+  .user-details-img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .user-details-img img {
+    width: 80%;
+    height: 70%;
+  }
+  .new-user-form button {
+    width: 30%;
+  }
+  .user-editing button {
+    width: 50%;
   }
 }
 /*# sourceMappingURL=App.css.map */
