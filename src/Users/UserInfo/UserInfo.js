@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 
-import UserDetails from '../common/UserDetails';
+import UserDetails from './UserDetails';
 
 const UserInfo = () => {
     const [ selectedUser, setSelectedUser ] = useState({});
@@ -11,7 +11,7 @@ const UserInfo = () => {
 
     useEffect( () => {
         const fetchData = async () => {
-            const response = await fetch(`https://test-api-vakoms.herokuapp.com/${id}`);
+            const response = await fetch(`http://test-api-vakoms.herokuapp.com/users/${id}`);
             const data = await response.json();
             setSelectedUser(data);
         }

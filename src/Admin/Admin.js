@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import UserForm from '../common/UserForm';
 import './style/style.css';
 
-const Admin = ({handleAddUser}) => {
-    const [ fields, setFields ] = useState({
-        id: Date.now(),
+const Admin = () => {
+    const [ fields ] = useState({
         fullName: '',
         birthday: '',
         direction: '',
         email: '',
-        phone: ''
+        phone: '',
+        img: ''
     });
     const [ newUser, setNewUser ] = useState({});
 
@@ -21,25 +21,39 @@ const Admin = ({handleAddUser}) => {
         handleChangeField(fields);
     }, [fields] );
 
+    const sendData = () => {
+        fetch('http://test-api-vakoms.herokuapp.com/users/', {
+            method: 'POST',
+            header: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newUser)
+        })
+    }
+
     const handleSubmit = () => {
         setNewUser(fields);
         const { fullName, birthday, direction, email, phone } = newUser;
 
         if( fullName && birthday && direction && email && phone ) {
-            handleAddUser(newUser);
-            alert('You added new user');
+            sendData();
         } else {
             alert('Fill all fields');
         }
-        
+
     }
 
     return(
         <div className="information-admin">
-            <UserForm user={fields} handleChangeField={handleChangeField} />
-            <button onClick={handleSubmit}>
-                Submit
-            </button>
+            <div className="new-user-form">
+                <UserForm
+                    user={fields}
+                    handleChangeField={handleChangeField}
+                />
+                <button onClick={handleSubmit}>
+                    Submit
+                </button>
+            </div>
         </div>
     )
 }
