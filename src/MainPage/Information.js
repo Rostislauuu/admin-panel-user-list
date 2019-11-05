@@ -1,7 +1,7 @@
 import React from 'react';
 import { renderRoutes } from 'react-router-config';
 
-import { mainPageRoutes } from '../routes/MainPageRoutes';
+import { mainPageRoutes } from './routes/MainPageRoutes';
 
 const Information = () => {
     return(
