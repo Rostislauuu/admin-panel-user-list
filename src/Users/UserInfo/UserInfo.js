@@ -72,7 +72,7 @@ const UserInfo = () => {
                         user={selectedUser}
                         handleChangeField={handleChangeField}
                     />
-                    <button onClick={handleSubmit} style={{width: '10%'}}>
+                <button onClick={handleSubmit} style={{ width: '11%' }}> 
                         Submit
                     </button>
                 </div>
