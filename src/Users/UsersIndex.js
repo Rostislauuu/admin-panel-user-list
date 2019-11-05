@@ -2,7 +2,7 @@ import React from 'react';
 import { renderRoutes } from 'react-router-config';
 import './style/style.css';
 
-import { usersListRoutes } from './Routes/UsersListRoutes';
+import { usersListRoutes } from './routes/UsersListRoutes';
 
 const Users = () => {
         return (
