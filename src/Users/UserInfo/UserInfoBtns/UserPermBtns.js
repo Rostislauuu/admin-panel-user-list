@@ -1,18 +1,16 @@
 import React, { useContext, Fragment } from 'react'
+import { AdminContext } from '../../../Admin/AdminContext/AdminContext';
 
-import { AdminFuncContext } from '../../../Context/AdminFuncContext';
-
-const UserPermBtns = () => {
-    const { setIsRedirect, returnBack } = useContext(AdminFuncContext);
+export const UserPermBtns = () => {
+    const { setIsRedirect, returnBack } = useContext(AdminContext);
 
     return(
         <Fragment>
             {returnBack()}
+            
             <button onClick={() => setIsRedirect(true)}>
                 Back
             </button>   
         </Fragment>
     )
-}
-
-export default UserPermBtns;
+};

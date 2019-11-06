@@ -1,9 +1,8 @@
 import React from 'react';
+import { SidebarUserElem } from '../SidebarUser/SidebarUserElem';
+import { SidebarAdminElem } from './SidebarAdminElem';
 
-import SidebarUserElem from '../SidebarUser/SidebarUserElem';
-import SidebarAdminElem from './SidebarAdminElem';
-
-const SidebarAdmin = () => {
+export const SidebarAdmin = () => {
     return (
         <nav className="sidebar-admin-root">
             <ul>
@@ -12,6 +11,4 @@ const SidebarAdmin = () => {
             </ul>
         </nav>
     )
-}
-
-export default SidebarAdmin;
+};
