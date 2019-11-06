@@ -1,8 +1,7 @@
 import React from 'react';
+import { SidebarUserElem } from './SidebarUserElem';
 
-import SidebarUserElem from './SidebarUserElem';
-
-const SidebarUser = () => {
+export const SidebarUser = () => {
     return(
         <nav className="sidebar-user-root">
             <ul>
@@ -10,6 +9,4 @@ const SidebarUser = () => {
             </ul>
         </nav>
     )
-}
-
-export default SidebarUser;
+};

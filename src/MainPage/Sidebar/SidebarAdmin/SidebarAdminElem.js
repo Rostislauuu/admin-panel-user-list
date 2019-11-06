@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const SidebarAdminElem = () => {
+export const SidebarAdminElem = () => {
     return (
         <li className="sidebar-admin">
             <Link
@@ -14,6 +14,4 @@ const SidebarAdminElem = () => {
             </Link>
         </li>
     )
-}
-
-export default SidebarAdminElem;
+};

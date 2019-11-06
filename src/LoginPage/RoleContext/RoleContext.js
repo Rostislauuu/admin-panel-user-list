@@ -2,13 +2,13 @@ import React, { createContext, useState } from 'react';
 
 export const RoleContext = createContext();
 
-const RoleContextProvider = ({children}) => {
+export const RoleContextProvider = ({children}) => {
     const permission = {
-        initialRole: '',
+        initialRole: null,
         user: 'user',
         admin: 'admin',
         unknown: 'unknown'
-    }
+    };
 
     const [role, setRole] = useState(permission.initialRole);
     const [fields, setFields] = useState({});
@@ -16,7 +16,7 @@ const RoleContextProvider = ({children}) => {
     const handleChangeFields = name => event => {
         const value = event.target.value;
         setFields({ ...fields, [name]: value });
-    }
+    };
 
     const handleSubmit = () => {
         const { login, password } = fields;
@@ -29,13 +29,18 @@ const RoleContextProvider = ({children}) => {
             setRole(permission.unknown);
         }
 
+        localStorage.setItem('jwt', 'hello');
+    };
+
+   const logOut = () => {
+        localStorage.removeItem('jwt');
+        setRole(null);
     }
 
     return(
-        <RoleContext.Provider value={ {role, permission, handleChangeFields, handleSubmit} }>
+        <RoleContext.Provider
+            value={{ role, permission, handleChangeFields, handleSubmit, logout: logOut } }>
             {children}
         </RoleContext.Provider>
     )
-}
-
-export default RoleContextProvider;
+};

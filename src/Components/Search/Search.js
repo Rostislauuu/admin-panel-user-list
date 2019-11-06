@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Search = ({ handleSetSearchValue, searchValue }) => {
+export const Search = ({ handleSetSearchValue, searchValue }) => {
     return(
         <div className="search" >
             <input 
@@ -9,6 +9,4 @@ const Search = ({ handleSetSearchValue, searchValue }) => {
             />
         </div>
     )
-}
-
-export default Search;
+};
