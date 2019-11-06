@@ -68,6 +68,14 @@
   }
 }
 
+@media( max-width: 1315px ) {
+  .header {
+    button {
+      width: 7%;
+    }
+  }
+}
+
 @media( max-width: 1200px ) {
   .col-1-4 {
     flex-basis: 25%;
@@ -152,6 +160,12 @@
       width: 25%;
     }
   }
+
+  .header {
+    button {
+      width: 10%;
+    }
+  }
 }
 
 @media( max-width: 750px ) {
@@ -195,6 +209,12 @@
   .user-editing {
     button {
       width: 50%;
+    }
+  }
+
+  .header {
+    button {
+      width: 13%;
     }
   }
 }
