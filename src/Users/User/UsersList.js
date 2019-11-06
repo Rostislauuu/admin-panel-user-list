@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-
-import User from  './User';
-import Search from './Search/Search';
+import { UserCard } from  './UserCard';
+import { Search } from '../../Components/Search/Search';
 
 const useFetch = url => {
     const [ users, setUsers ] = useState([ ]);
@@ -14,10 +13,10 @@ const useFetch = url => {
         }
 
         fetchData();
-    }, [] )
+    }, [] );
 
     return users;
-}
+};
 
 export const UsersList = () => {
     const emptyString = '';
@@ -25,28 +24,24 @@ export const UsersList = () => {
     const [ users, setUsers ] = useState( fetchedData || emptyString );
     
     useEffect ( () => {
-
         if ( fetchedData !== emptyString ){
             setUsers(fetchedData);
         }
 
-    }, [fetchedData] )
+    }, [fetchedData] );
 
     const usersList = users.map( item => {
-        return <User 
-                        key={item.id}  
-                        user={item}
-                    />
-    })
+        return <UserCard key={item.id}   user={item} />
+    });
 
     const [ searchValue, setSearchValue ] = useState(emptyString);
     const handleSetSearchValue = value => {
         setSearchValue(value);
-    }
+    };
 
     const filteredList = usersList.filter( item => {
         return item.props.user.fullName.toLowerCase().includes( searchValue.toLowerCase() );
-    })
+    });
 
     return(
         <div className="information-user-root">
@@ -57,6 +52,4 @@ export const UsersList = () => {
             {filteredList}
         </div>
     )
-}
-
-export default UsersList;
+};

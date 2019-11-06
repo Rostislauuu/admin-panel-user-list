@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const User = ({ user }) => {
+export const UserCard = ({ user }) => {
     return (
         <Link 
             to={`/main-page/users/${user.id}`} 
@@ -9,17 +9,18 @@ const User = ({ user }) => {
             style={{ textDecoration: 'none', color: '#212121' }}
         >
             <div className="user">
+
                 <div className="user-photo">
                     <img alt="Vakoms" src={user.img} />
                 </div>
+
                 <div className="user-name">
                     <p>
                         {user.fullName}
                     </p>
                 </div>
+                
             </div>
         </Link>
     )
-}
-
-export default User;
+};
