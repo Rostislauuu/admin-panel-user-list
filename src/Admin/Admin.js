@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import UserForm from '../common/UserForm';
+import { UserForm } from '../Common/UserForm';
 import './style/style.css';
 
-const Admin = () => {
+export const Admin = () => {
     const [ fields ] = useState({
         fullName: '',
         birthday: '',
@@ -15,7 +15,7 @@ const Admin = () => {
 
     const handleChangeField = fields => {
         setNewUser(fields);
-    }
+    };
 
     useEffect( () => {
         handleChangeField(fields);
@@ -29,7 +29,7 @@ const Admin = () => {
             },
             body: JSON.stringify(newUser)
         })
-    }
+    };
 
     const handleSubmit = () => {
         setNewUser(fields);
@@ -41,11 +41,12 @@ const Admin = () => {
             alert('Fill all fields');
         }
 
-    }
+    };
 
     return(
         <div className="information-admin">
             <div className="new-user-form">
+
                 <UserForm
                     user={fields}
                     handleChangeField={handleChangeField}
@@ -53,9 +54,8 @@ const Admin = () => {
                 <button onClick={handleSubmit}>
                     Submit
                 </button>
+                
             </div>
         </div>
     )
-}
-
-export default Admin;
+};

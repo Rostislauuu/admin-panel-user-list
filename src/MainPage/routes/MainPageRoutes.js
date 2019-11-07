@@ -1,5 +1,5 @@
-import Admin from '../Admin/Admin';
-import Users from '../Users/UsersIndex';
+import { Admin } from '../../Admin/Admin';
+import { Users } from '../../Users/Users';
 
 export const mainPageRoutes = [
     {
@@ -10,4 +10,4 @@ export const mainPageRoutes = [
         path: '/main-page/admin',
         component: Admin 
     }
-]
+];

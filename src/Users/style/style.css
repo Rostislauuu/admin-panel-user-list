@@ -3,6 +3,7 @@
       flex-basis: 21%;
   max-width: 21%;
   font-size: 13px;
+  margin: 20px 0;
 }
 
 .information-user-root {
@@ -61,8 +62,8 @@
 
 .user-details-img img {
   margin-top: 10px;
-  width: 50%;
-  height: 70%;
+  width: 230px;
+  height: 230px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -188,7 +189,7 @@
 }
 
 .user {
-  margin: 25px 10px 0 8px;
+  margin: 0 10px 0 8px;
   min-height: 240px;
   border: 1px solid #97b7ea;
   border-radius: 10px;
@@ -220,15 +221,15 @@
 }
 
 .user-photo img {
-  height: 200px;
-  width: 150px;
+  height: 170px;
+  width: 170px;
   border-radius: 9px;
 }
 
 .user-name {
   min-height: 20px;
   margin-bottom: -10px;
-  padding: 15px 0;
+  padding: 10px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

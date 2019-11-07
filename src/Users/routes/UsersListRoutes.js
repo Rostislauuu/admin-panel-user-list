@@ -1,5 +1,5 @@
-import UsersList from '../UsersList';
-import UserInfo from '../UserInfo/UserInfo';
+import { UsersList } from '../User/UsersList';
+import { UserInfo } from '../UserInfo/UserInfo';
 
 export const usersListRoutes = [
     {
@@ -10,4 +10,4 @@ export const usersListRoutes = [
         path: "/main-page/users",
         component: UsersList
     }
-]
+];
