@@ -34,12 +34,13 @@ export const RoleContextProvider = ({children}) => {
 
    const logOut = () => {
         localStorage.removeItem('jwt');
+        localStorage.removeItem('permission');
         setRole(null);
     }
 
     return(
         <RoleContext.Provider
-            value={{ role, permission, handleChangeFields, handleSubmit, logout: logOut } }>
+            value={{ role, permission, handleChangeFields, handleSubmit, logout: logOut, setRole } }>
             {children}
         </RoleContext.Provider>
     )
