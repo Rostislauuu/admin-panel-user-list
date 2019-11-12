@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const UserDetails = ({user}) => {
+export const UserDetails = ({ user }) => {
     return(
         <div className="user-details">
             

@@ -169,6 +169,9 @@
   .header button {
     width: 10%;
   }
+  .user-form button {
+    width: 50%;
+  }
 }
 
 @media (max-width: 750px) {
@@ -212,6 +215,9 @@
   }
   .header button {
     width: 13%;
+  }
+  .user-form button {
+    width: 50%;
   }
 }
 /*# sourceMappingURL=App.css.map */
