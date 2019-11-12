@@ -131,6 +131,24 @@
   input{
     padding: 5px;
   }
+
+  button {
+    width: 50%;
+    margin-right: 10px;
+    line-height: 2em;
+    border: none;
+    border-radius: 3px;
+    font-size: 15px;
+    color: $textColor;
+    background: $navAndButtonBg;
+    transition: $bgTransition;
+    outline: none;
+
+    &:hover {
+      background: $navAndButtonHover;
+      cursor: pointer;
+    }
+  }
 }
 
 .user {

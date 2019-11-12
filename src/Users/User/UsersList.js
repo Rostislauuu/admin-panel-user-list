@@ -45,10 +45,7 @@ export const UsersList = () => {
 
     return(
         <div className="information-user-root">
-            <Search 
-                searchValue={searchValue}
-                handleSetSearchValue={handleSetSearchValue}
-            />
+            <Search  searchValue={searchValue} handleSetSearchValue={handleSetSearchValue} />
             {filteredList}
         </div>
     )
