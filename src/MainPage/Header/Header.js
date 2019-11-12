@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { RoleContext } from '../../LoginPage/RoleContext/RoleContext';
 
 export const Header = () => {
-    const { logout } = useContext(RoleContext)
+    const { logOut } = useContext(RoleContext)
 
     return (
         <header className="header">
@@ -13,7 +13,7 @@ export const Header = () => {
                 />
             </Link>
 
-            <button onClick={logout}>
+            <button onClick={logOut}>
                 Log Out
             </button>
         </header>

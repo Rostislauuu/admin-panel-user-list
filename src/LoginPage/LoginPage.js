@@ -5,7 +5,7 @@ import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import './style/style.css';
 
-const validateLogin = (login) => {
+const validateLogin = login => {
     let error;
 
     if ( login !== 'user' && login !== 'admin' ) {

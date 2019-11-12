@@ -4,4 +4,4 @@ export const Footer = () => {
     return(
             <p>@Copyright by Vakoms</p>
     )
-}
+};
