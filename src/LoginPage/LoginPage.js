@@ -5,11 +5,14 @@ import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import './style/style.css';
 
+const user = 'user';
+const admin = 'admin';
+
 const validateLogin = login => {
     let error;
 
-    if ( login !== 'user' && login !== 'admin' ) {
-        error = 'Invalid login'
+    if (login !== user && login !== admin) {
+      error = "Invalid login";
     }
 
     return error;
@@ -18,7 +21,7 @@ const validateLogin = login => {
 const validatePassword = password => {
     let error;
 
-    if( password !== 'user' && password !== 'admin') {
+    if(password !== user && password !== admin) {
         error = 'Invalid password';
     }
 
@@ -79,12 +82,12 @@ export default withFormik({
     }),
 
     handleSubmit( values, { resetForm } ) {
-       if( values.login === 'user' && values.password === 'user' ) {
-           values.role = 'user';
+       if( values.login === user && values.password === user ) {
+           values.role = user;
            localStorage.setItem('permission', values.role);
            localStorage.setItem('jwt', 'hello');
-       } else if ( values.login === 'admin' && values.password === 'admin' ) {
-           values.role = 'admin';
+       } else if ( values.login === admin && values.password === admin ) {
+           values.role = admin;
            localStorage.setItem('permission', values.role);
            localStorage.setItem('jwt', 'hello');
        } 
