@@ -2,6 +2,8 @@ import React, { Fragment } from 'react';
 import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 
+const adminRoutePath = "/main-page/admin";
+
 const UserForm = ({ touched, errors, values }) => {           
     return(
         <Form className="user-form">
@@ -104,25 +106,25 @@ export const UserFormValidation = withFormik({
             img: values.selectedUser.img
         };
 
-        if ( values.pathname === '/main-page/admin' ) {
-            fetch('http://test-api-vakoms.herokuapp.com/users/', {
-                method: 'POST',
-                header: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(dataToSend)
-            })
+        if (values.pathname === adminRoutePath) {
+          fetch("http://test-api-vakoms.herokuapp.com/users/", {
+            method: "POST",
+            header: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(dataToSend)
+          });
         } else {
-            fetch(`http://test-api-vakoms.herokuapp.com/users/${values.id}`, {
-                method: 'PUT',
-                header: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(dataToSend)
-            }) 
+          fetch(`http://test-api-vakoms.herokuapp.com/users/${values.id}`, {
+            method: "PUT",
+            header: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(dataToSend)
+          });
 
-            setTimeout( () => values.setIsUpdating(false), 1);
-            values.setSelectedUser(dataToSend);
+          setTimeout( () => values.setIsUpdating(false), 1 );
+          values.setSelectedUser(dataToSend);
         }
         
         resetForm();
