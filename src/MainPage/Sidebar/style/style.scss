@@ -3,6 +3,7 @@
 .sidebar-root-box {
   flex-basis: 20%;
   max-width: 20%;
+  margin-left: 10px;
 }
 
 .sidebar-user-root {
@@ -10,25 +11,11 @@
   color: $textColor;
   background: $navAndButtonBg;
   border-radius: 5px;
-  margin-left: 10px;
 }
 
 .sidebar-user-root ul {
   padding: 0;
   list-style: none;
-}
-
-.sidebar-admin-root {
-  max-height: 14em;
-  color: $textColor;
-  background: $navAndButtonBg;
-  border-radius: 5px;
-  margin-left: 10px;
-}
-
-.sidebar-admin-root ul {
-  list-style: none;
-  padding: 0;
 }
 
 .sidebar-user {
@@ -42,11 +29,24 @@
   p {
     text-align: center;
     text-transform: uppercase;
+    font-weight: 700;
 
     &:hover{
      cursor: pointer;
     }
   }
+}
+
+.sidebar-admin-root {
+  max-height: 14em;
+  color: $textColor;
+  background: $navAndButtonBg;
+  border-radius: 5px;
+}
+
+.sidebar-admin-root ul {
+  list-style: none;
+  padding: 0;
 }
 
 .sidebar-admin {
@@ -61,6 +61,7 @@
   p {
     text-align: center;
     text-transform: uppercase;
+    font-weight: 700;
     
     &:hover {
      cursor: pointer;
