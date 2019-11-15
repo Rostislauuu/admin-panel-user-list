@@ -7,20 +7,20 @@ import { Footer } from './Footer/Footer';
 export const MainPage = () => {
     return(
         <Fragment>
-        <div className="wrapper">
-            <div className="root-box">
+        <div className="root-box">
+            <div className="wrapper">
 
-                <Header />
-                <div className="main">
-                    <Sidebar />
-                    <Information />
+                    <Header />
+                    <div className="main">
+                        <Sidebar />
+                        <Information />
+                    </div>
+
                 </div>
 
+            <div className="footer">
+                <Footer />
             </div>
-        </div>
-
-        <div className="footer">
-            <Footer />
         </div>
         </Fragment>
     )

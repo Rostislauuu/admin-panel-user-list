@@ -8,11 +8,14 @@
 
 .new-user-form {
   width: 30%;
+  margin-bottom: 20px;
+  padding: 20px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border: $newUserFormBorder;
+  border-radius: 10px;
 }
 
 .information-admin {

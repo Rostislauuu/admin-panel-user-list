@@ -12,6 +12,8 @@
 
 .new-user-form {
   width: 30%;
+  margin-bottom: 20px;
+  padding: 20px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -26,6 +28,7 @@
       -ms-flex-align: center;
           align-items: center;
   border: 2px solid #97b7ea;
+  border-radius: 10px;
 }
 
 .information-admin {

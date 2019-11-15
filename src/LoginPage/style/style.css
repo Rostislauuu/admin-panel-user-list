@@ -35,7 +35,7 @@
 .login-form-box input {
   height: 1.3em;
   width: 50%;
-  padding: 5px;
+  padding: 8px;
   margin-bottom: 15px;
   border-radius: 3px;
   border: 1px solid #97b7ea;
@@ -44,11 +44,13 @@
 
 .login-form-box button {
   line-height: 2em;
-  width: 15%;
+  width: 18%;
+  padding: 4px;
   border: none;
   border-radius: 3px;
-  margin-top: 10px;
+  margin-top: 5px;
   font-size: 14px;
+  font-weight: 900;
   color: #212121;
   background: #97b7ea;
   -webkit-transition: background 0.3s linear;
