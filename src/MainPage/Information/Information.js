@@ -4,8 +4,8 @@ import { mainPageRoutes } from '../routes/MainPageRoutes';
 
 export const Information = () => {
     return(
-            <div className="information-root">
-                {renderRoutes(mainPageRoutes)}
-            </div>
+        <div className="information-root">
+            {renderRoutes(mainPageRoutes)}
+        </div>
     )
 };

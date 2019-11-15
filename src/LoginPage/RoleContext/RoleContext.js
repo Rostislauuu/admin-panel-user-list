@@ -14,6 +14,7 @@ export const RoleContextProvider = ({children}) => {
    const logOut = () => {
         localStorage.removeItem('jwt');
         localStorage.removeItem('permission');
+        setRole(null);
     }
 
     return(
