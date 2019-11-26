@@ -10,7 +10,7 @@
 
 .login-form-box {
   width: 30%;
-  height: 200px;
+  height: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,12 +19,8 @@
   background: $whiteColor;
 
   input {
-    height: 1.3em;
+    height: 1.7em;
     width: 50%;
-    padding: 8px;
-    margin-bottom: 15px;
-    border-radius: 3px;
-    border: $searchAndUserBorder;
     outline: none;
   }
 
@@ -34,7 +30,7 @@
     padding: 4px;
     border: none;
     border-radius: 3px;
-    margin-top: 5px;
+    margin-top: 30px;
     font-size: 14px;
     font-weight: 900;
     color: $textColor;
@@ -47,4 +43,8 @@
       cursor: pointer;
     }
   }
+}
+
+.login-form-input input {
+  margin-top: 20px;
 }

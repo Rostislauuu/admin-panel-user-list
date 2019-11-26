@@ -3,17 +3,10 @@
   max-width: 100%;
   height: 40px;
   margin: 5px 10px 0 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
-
 .search input {
   height: 20px;
   padding: 5px;
@@ -23,19 +16,13 @@
 }
 
 .information-user-root {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .col-1-6 {
-  -ms-flex-preferred-size: 21%;
-      flex-basis: 21%;
+  flex-basis: 21%;
   max-width: 21%;
   margin: 20px 10px 20px 8px;
 }
@@ -44,33 +31,21 @@
   height: 260px;
   border: 1px solid #97b7ea;
   border-radius: 10px;
-  -webkit-transition: -webkit-transform 0.3s linear;
-  transition: -webkit-transform 0.3s linear;
   transition: transform 0.3s linear;
-  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
 }
-
 .user:hover {
   cursor: pointer;
-  -webkit-transform: translateY(-10px);
-          transform: translateY(-10px);
+  transform: translateY(-10px);
 }
 
 .user-photo {
   max-width: 100%;
   height: 200px;
   padding: 8px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
-
 .user-photo img {
   height: 170px;
   width: 170px;
@@ -80,129 +55,88 @@
 .user-name {
   height: 20px;
   padding: 10px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
-
 .user-name p {
   font-size: 20px;
 }
 
 .user-details-not-editing {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
+  margin-bottom: 20px;
 }
 
 .user-editing {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
 .user-editing button {
   margin-top: 10px;
 }
 
 .user-details-img {
   margin: 0 5px 0 15px;
-  -ms-flex-preferred-size: 40%;
-      flex-basis: 40%;
+  flex-basis: 40%;
   max-width: 40%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
+  align-items: center;
   border: 1px solid #97b7ea;
   border-radius: 5px;
   background: #eeeeee;
 }
-
 .user-details-img img {
   margin-top: 10px;
   width: 230px;
   height: 230px;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
 }
-
 .user-details-img label {
-  color: #606060;
-  margin-top: 10px;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
+}
+.user-details-img p {
+  align-self: center;
 }
 
-.user-details-img p {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+.user-details-img-image {
+  margin-top: 20px;
+}
+
+.user-details-img-info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
 }
 
 .user-details-buttons {
   margin-right: 55px;
   padding: 20px 0;
-  -ms-flex-preferred-size: 70%;
-      flex-basis: 70%;
+  flex-basis: 70%;
   max-width: 70%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   border: 1px solid #97b7ea;
   border-radius: 5px;
   background: #eeeeee;
 }
 
 .buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
 .user-details {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   margin-right: 10px;
 }
-
 .user-details label {
   margin-bottom: 5px;
 }
-
 .user-details p {
   height: 1em;
   margin-bottom: 10px;
@@ -212,16 +146,13 @@
 
 .information-user-selected label {
   color: #606060;
-  margin-bottom: 5px;
+  margin: 7px 0;
 }
-
 .information-user-selected input {
   height: 2em;
-  margin-bottom: 10px;
   border-radius: 3px;
   outline: none;
 }
-
 .information-user-selected button {
   width: 100%;
   margin-right: 10px;
@@ -231,41 +162,25 @@
   font-size: 15px;
   color: #212121;
   background: #97b7ea;
-  -webkit-transition: background 0.3s linear;
   transition: background 0.3s linear;
   outline: none;
   font-weight: 700;
 }
-
 .information-user-selected button:hover {
   background: #c9e9ff;
   cursor: pointer;
 }
 
 .user-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 20px;
 }
-
-.user-form input {
-  padding: 5px;
-}
-
 .user-form button {
   width: 50%;
-  margin: 10px 10px 0 0;
+  margin: 15px 10px 0 0;
   line-height: 2em;
   border: none;
   border-radius: 3px;
@@ -273,13 +188,12 @@
   font-weight: 700;
   color: #212121;
   background: #97b7ea;
-  -webkit-transition: background 0.3s linear;
   transition: background 0.3s linear;
   outline: none;
 }
-
 .user-form button:hover {
   background: #c9e9ff;
   cursor: pointer;
 }
+
 /*# sourceMappingURL=style.css.map */

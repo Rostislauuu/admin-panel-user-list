@@ -3,6 +3,8 @@ import { Redirect, Route } from 'react-router-dom';
 import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { RoleContext } from "./RoleContext/RoleContext";
+import { TextField } from 'formik-material-ui';
+import { Button } from '@material-ui/core';
 import './style/style.css';
 
 const user = 'user';
@@ -38,25 +40,35 @@ const LoginPage = ({ errors, touched }) => {
 
                 <Form className="login-form-box">
                     <Fragment>
-                        { touched.login && errors.login && 
-                            <p style={{ fontSize: '13px', color: 'red', marginBottom: "5px" }}>
+
+                        { touched.login && errors.login &&
+                            <p style={{ display: 'none' }}>
                                 {errors.login}
                             </p>
                         }
-                        <Field type="text" name="login" placeholder="Login" validate={validateLogin} />
+
+                        <Field type="text" name="login" placeholder="Login"
+                               validate={validateLogin} component={TextField}
+                        />
                     </Fragment>
+
                     <Fragment>
+
                         { touched.password && errors.password &&
-                            <p style={{ fontSize: '13px', color: 'red', marginBottom: "5px" }}>
+                            <p style={{ display: 'none' }}>
                                 {errors.password}
                             </p>
                         }
-                        <Field type="password" name="password" placeholder="Password" validate={validatePassword} />
+
+                        <Field type="password" name="password" placeholder="Password" className="login-form-input"
+                               validate={validatePassword} component={TextField}
+                        />
+
                     </Fragment>
 
-                    <button type="submit">
+                    <Button type="submit" variant="contained" color="primary">
                         Submit
-                    </button>
+                    </Button>
                 </Form>
                 
                 { ( role === permission.user  &&  localStorage.getItem('jwt') ) && <Redirect to="/main-page" /> }
@@ -68,6 +80,9 @@ const LoginPage = ({ errors, touched }) => {
 };
 
 export default withFormik({
+    validateOnBlur: false,
+    validateOnChange: false,
+
     mapPropsToValues(){
         return {
             login: '',
