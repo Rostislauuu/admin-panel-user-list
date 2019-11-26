@@ -138,7 +138,7 @@ const UserForm = ({touched, errors, values}) => {
             <Fragment>
 
                 {touched.phone && errors.phone &&
-                    <p style={{fontSize: '13px', color: 'red', marginBottom: "5px"}}>
+                    <p style={{display: 'none'}}>
                         {errors.phone}
                     </p>
                 }
