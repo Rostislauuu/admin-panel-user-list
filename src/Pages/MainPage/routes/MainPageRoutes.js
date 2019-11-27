@@ -1,5 +1,7 @@
 import { Admin } from '../Information/Admin/Admin';
 import { Users } from '../Information/Users/Users';
+import { Chart } from '../Information/Chart/Chart';
+
 
 export const mainPageRoutes = [
     {
@@ -9,5 +11,9 @@ export const mainPageRoutes = [
     {
         path: '/main-page/admin',
         component: Admin 
+    },
+    {
+        path: '/main-page/chart',
+        component: Chart
     }
 ];
