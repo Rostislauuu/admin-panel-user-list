@@ -3,6 +3,9 @@
   max-width: 20%;
   margin-left: 10px;
 }
+.sidebar-root-box button {
+  height: 70px;
+}
 
 .sidebar-user-root {
   max-height: 7em;

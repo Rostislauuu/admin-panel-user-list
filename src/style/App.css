@@ -81,12 +81,17 @@
 
   .user-details-img {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
   }
   .user-details-img img {
-    width: 65%;
-    height: 65%;
+    width: 80%;
+    height: 80%;
+  }
+
+  .user-details-img-image {
+    display: flex;
+    justify-content: center;
   }
 
   .new-user-form {
@@ -105,12 +110,18 @@
 
   .user-details-img {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
   }
   .user-details-img img {
     width: 200px;
     height: 200px;
+  }
+
+  .user-details-img-image {
+    display: flex;
+    justify-content: center;
   }
 }
 @media (max-width: 950px) {
@@ -129,8 +140,9 @@
 
   .user-details-img {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
   }
   .user-details-img img {
     width: 170px;

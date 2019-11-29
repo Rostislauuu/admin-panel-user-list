@@ -70,6 +70,7 @@
 
 .user-details-not-editing {
   display: flex;
+  margin-bottom: 20px;
 }
 
 .user-editing {
@@ -89,6 +90,7 @@
   max-width: 40%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   border: $searchAndUserBorder;
   border-radius: 5px;
   background: $userDetailsBg;
@@ -101,13 +103,21 @@
   }
 
   label {
-    color: $labelColor;
-    margin-top: 10px;
     align-self: center;
   }
    p {
     align-self: center;
    }
+}
+
+.user-details-img-image {
+  margin-top: 20px;
+}
+
+.user-details-img-info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
 }
 
 .user-details-buttons {
@@ -118,7 +128,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: $searchAndUserBorder; 
+  border: $searchAndUserBorder;
   border-radius: 5px;
   background: $userDetailsBg;
 }
@@ -148,12 +158,12 @@
 .information-user-selected {
   label {
     color: $labelColor;
-    margin-bottom: 5px;
+    margin: 7px 0;
   }
 
   input {
     height: 2em;
-    margin-bottom: 10px;
+
     border-radius: 3px;
     outline: none;
   }
@@ -185,13 +195,9 @@
   align-items: center;
   margin-bottom: 20px;
 
-  input{
-    padding: 5px;
-  }
-
   button {
     width: 50%;
-    margin: 10px 10px 0 0;
+    margin: 15px 10px 0 0;
     line-height: 2em;
     border: none;
     border-radius: 3px;

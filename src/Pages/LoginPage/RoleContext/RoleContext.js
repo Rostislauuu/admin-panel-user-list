@@ -15,7 +15,7 @@ export const RoleContextProvider = ({children}) => {
         localStorage.removeItem('jwt');
         localStorage.removeItem('permission');
         setRole(null);
-    }
+   };
 
     return(
         <RoleContext.Provider value={{ role, permission, logOut, setRole } }>

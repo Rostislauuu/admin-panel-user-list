@@ -22,31 +22,23 @@
   justify-content: flex-start;
   align-items: center;
 }
+.information-admin label:not(:first-child) {
+  margin: 15px 0 2px 0;
+}
 .information-admin label {
   color: #606060;
-  margin: 5px 0;
 }
 .information-admin input {
   height: 2em;
-  margin-bottom: 10px;
   border-radius: 3px;
   outline: none;
 }
-.information-admin button {
-  line-height: 2em;
-  margin-bottom: 10px;
-  border: none;
-  width: 15%;
-  border-radius: 3px;
-  font-size: 15px;
-  color: #212121;
-  background: #97b7ea;
-  transition: background 0.3s linear;
-  outline: none;
-}
-.information-admin button:hover {
-  background: #c9e9ff;
-  cursor: pointer;
+
+/*.MuiInput-input {
+  padding: 20px;
+}*/
+.select-field {
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

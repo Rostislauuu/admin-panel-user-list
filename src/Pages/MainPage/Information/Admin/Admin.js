@@ -8,6 +8,7 @@ export const Admin = ({ location }) => {
         fullName: '',
         birthday: '',
         direction: '',
+        subdirection: '',
         email: '',
         phone: ''
     };

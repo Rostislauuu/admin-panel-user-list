@@ -64,6 +64,7 @@
 
 .user-details-not-editing {
   display: flex;
+  margin-bottom: 20px;
 }
 
 .user-editing {
@@ -82,6 +83,7 @@
   max-width: 40%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   border: 1px solid #97b7ea;
   border-radius: 5px;
   background: #eeeeee;
@@ -93,12 +95,20 @@
   align-self: center;
 }
 .user-details-img label {
-  color: #606060;
-  margin-top: 10px;
   align-self: center;
 }
 .user-details-img p {
   align-self: center;
+}
+
+.user-details-img-image {
+  margin-top: 20px;
+}
+
+.user-details-img-info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
 }
 
 .user-details-buttons {
@@ -136,11 +146,10 @@
 
 .information-user-selected label {
   color: #606060;
-  margin-bottom: 5px;
+  margin: 7px 0;
 }
 .information-user-selected input {
   height: 2em;
-  margin-bottom: 10px;
   border-radius: 3px;
   outline: none;
 }
@@ -169,12 +178,9 @@
   align-items: center;
   margin-bottom: 20px;
 }
-.user-form input {
-  padding: 5px;
-}
 .user-form button {
   width: 50%;
-  margin: 10px 10px 0 0;
+  margin: 15px 10px 0 0;
   line-height: 2em;
   border: none;
   border-radius: 3px;

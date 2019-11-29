@@ -19,6 +19,13 @@ export const UserDetails = ({ user }) => {
             </p>
 
             <label>
+                Subdirection
+            </label>
+            <p>
+                {user.subdirection}
+            </p>
+
+            <label>
                 Email
             </label>
             <p>
