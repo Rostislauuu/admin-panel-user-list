@@ -1,65 +1,47 @@
 .login-form-root {
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   background: #97b7ea;
 }
 
 .login-form-box {
   width: 30%;
-  height: 200px;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  height: 250px;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   border-radius: 5px;
   background: #ffffff;
 }
-
 .login-form-box input {
-  height: 1.3em;
+  height: 1.7em;
   width: 50%;
-  padding: 8px;
-  margin-bottom: 15px;
-  border-radius: 3px;
-  border: 1px solid #97b7ea;
   outline: none;
 }
-
 .login-form-box button {
   line-height: 2em;
   width: 18%;
   padding: 4px;
   border: none;
   border-radius: 3px;
-  margin-top: 5px;
+  margin-top: 30px;
   font-size: 14px;
   font-weight: 900;
   color: #212121;
   background: #97b7ea;
-  -webkit-transition: background 0.3s linear;
   transition: background 0.3s linear;
   outline: none;
 }
-
 .login-form-box button:hover {
   background: #c9e9ff;
   cursor: pointer;
 }
+
+.login-form-input input {
+  margin-top: 20px;
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -39,6 +39,7 @@ export const UserInfo = () => {
                     </div>
                 </div>
             }
+
             { isUpdating && 
                 <div className="user-editing">
                     <UserFormValidation id={id} selectedUser={selectedUser}

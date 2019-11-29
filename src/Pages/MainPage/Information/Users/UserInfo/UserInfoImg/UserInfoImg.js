@@ -3,14 +3,18 @@ import React from 'react';
 export const UserInfoImg = ({ selectedUser }) => {
     return(
         <div className="user-details-img">
-            <img alt="Vakoms" src={selectedUser.img} />
+            <div className="user-details-img-image">
+                <img alt="Vakoms" src={selectedUser.img} />
+            </div>
 
-            <label>
-                Name
-            </label>
-            <p>
-                {selectedUser.fullName}
-            </p>
+            <div className="user-details-img-info">
+                <label>
+                    Name
+                </label>
+                <p>
+                    {selectedUser.fullName}
+                </p>
+            </div>
 
         </div>
     )
