@@ -88,7 +88,12 @@ export const SidebarAdmin = () => {
                     <Link to="/main-page/chart" style={{ textDecoration: 'none', color: '#212121' }} >
                         <ListItemText primary="Statistics" onClick={popupState.close} />
                     </Link>
+                </StyledMenuItem>
 
+                <StyledMenuItem>
+                    <Link to="/main-page/devices" style={{ textDecoration: 'none', color: '#212121' }} >
+                        <ListItemText primary="Devices" onClick={popupState.close} />
+                    </Link>
                 </StyledMenuItem>
 
             </StyledMenu>

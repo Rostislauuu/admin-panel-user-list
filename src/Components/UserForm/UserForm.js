@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react';
-import {withFormik, Form, Field} from 'formik';
+import React, { Fragment, useEffect } from 'react';
+import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-import {Select} from 'formik-material-ui';
+import { Select } from 'formik-material-ui';
 import MenuItem from '@material-ui/core/MenuItem';
 import { FormHelperText } from '@material-ui/core';
 import { TextField } from 'formik-material-ui';
@@ -11,10 +11,14 @@ import { subdirections } from './subdirections';
 const adminRoutePath = "/main-page/admin";
 
 const UserForm = ({touched, errors, values}) => {
-    let isDirection = !values.direction ? true : false;
+    let isDirection = !values.direction;
     const  subdirectionsToShow = subdirections.filter( item => {
         return values.direction === item.type ? item.typeName : null
     });
+
+    useEffect( () => {
+        values.subdirection = '';
+    }, [values.direction]);
 
     return(
         <Form className="user-form">
@@ -69,7 +73,7 @@ const UserForm = ({touched, errors, values}) => {
                     }
 
                     {
-                        directions.map((item, index) => {
+                        directions.map(( item, index ) => {
                             return <MenuItem key={index} value={item.type}>
                                 <em>
                                     { item.type }
