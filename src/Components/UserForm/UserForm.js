@@ -17,7 +17,10 @@ const UserForm = ({touched, errors, values}) => {
     });
 
     useEffect( () => {
-        values.subdirection = '';
+        if( values.pathname === adminRoutePath ) {
+            values.subdirection = '';
+        }
+
     }, [values.direction]);
 
     return(
