@@ -3,7 +3,6 @@ import { Users } from '../Information/Users/Users';
 import { Chart } from '../Information/Chart/Chart';
 import { Devices } from '../Information/Devices/Devices';
 
-
 export const mainPageRoutes = [
     {
         path: '/main-page/users',

@@ -4,8 +4,8 @@ import { AdminContext } from '../../../Admin/AdminContext/AdminContext';
 
 export const AdminButtons = ({ setIsUpdating }) => {
     const { setIsRedirect, returnBack, deleteUser } = useContext(AdminContext);
-
     let { id } = useParams();
+
     const onDelete = () => {
         deleteUser(id);
         setIsRedirect(true);

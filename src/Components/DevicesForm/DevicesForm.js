@@ -7,7 +7,8 @@ import { withFormik, Field, Form } from 'formik';
 import * as Yup from 'yup';
 
 const DevicesForm = ({ values, errors }) => {
-    const [ data, setData ] = useState({});
+    const [ users, setUsers ] = useState([]);
+    const [ devices, setDevices ] = useState([]);
     const [ isLoaded, setIsLoaded ] = useState(false);
     const deviceError = !!errors.device;
     const userError = !!errors.user;
@@ -16,11 +17,13 @@ const DevicesForm = ({ values, errors }) => {
         const source = axios.CancelToken.source();
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://test-api-vakoms.herokuapp.com/users-devices', {
-                    cancelToken: source.token
-                });
+                const [ userResponse, devicesResponse ] = await Promise.all([
+                    axios.get('http://test-api-vakoms.herokuapp.com/users', { cancelToken: source.token }),
+                    axios.get('http://test-api-vakoms.herokuapp.com/users_devices', { cancelToken: source.token })
+                ]);
 
-                setData(response.data);
+                setUsers(userResponse.data);
+                setDevices(devicesResponse.data);
                 setIsLoaded(true);
             } catch (error) {
                 if( axios.isCancel(error) ) {
@@ -54,10 +57,10 @@ const DevicesForm = ({ values, errors }) => {
                         }
 
                         {
-                            data.devices.map( ( item, index ) => {
-                                return <MenuItem key={index} value={item}>
+                            devices.map( ( item, index ) => {
+                                return <MenuItem key={index} value={item.id}>
                                     <em>
-                                        { item }
+                                        { item.device_name }
                                     </em>
                                 </MenuItem>
                             })
@@ -76,10 +79,10 @@ const DevicesForm = ({ values, errors }) => {
                         }
 
                         {
-                            data.users.map( ( item, index ) => {
-                                return <MenuItem key={index} value={item.fullName}>
+                            users.map( ( user, index ) => {
+                                return <MenuItem key={index} value={user.id}>
                                     <em>
-                                        { item.fullName }
+                                        { user.fullName }
                                     </em>
                                 </MenuItem>
                             })
@@ -114,7 +117,9 @@ export default withFormik({
     }),
 
     handleSubmit(values) {
-        console.log(values);
+        axios.put(`http://test-api-vakoms.herokuapp.com/users_devices/${values.device}`, {
+            user: values.user
+        });
     }
 
 }) (DevicesForm)
