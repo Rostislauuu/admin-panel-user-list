@@ -4,7 +4,7 @@ import { UserDetails } from '../../../../../Components/UserDetails/UserDetails';
 import { UserFormValidation } from '../../../../../Components/UserForm/UserForm';
 import { UserInfoImg } from './UserInfoImg/UserInfoImg';
 import { Buttons } from './Buttons/Buttons';
-import { AdminContextProvider }  from '../../Admin/AdminContext/AdminContext';
+import { AdminContextProvider }  from '../../AddUser/AdminContext/AdminContext';
 
 export const UserInfo = () => {
     const [ selectedUser, setSelectedUser ] = useState({});

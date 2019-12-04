@@ -117,13 +117,19 @@ export const SidebarAdmin = () => {
                 { isExpandDevices &&
                     <Collapse in={isExpandDevices} timeout="auto" unmountOnExit>
                         <ListItem button>
-                            <Link to="/main-page/devices" style={{ textDecoration: 'none' }} >
+
+                            <Link to="/main-page/devices_list" style={{ textDecoration: 'none' }} >
                                 <ListItemText style={{ marginLeft: '20px', color: '#737373' }} primary="Devices List" onClick={popupState.close} />
                             </Link>
+
                         </ListItem>
 
                         <ListItem button>
-                            <ListItemText style={{ marginLeft: '20px', color: '#737373' }} primary="Manage Devices" onClick={popupState.close} />
+
+                            <Link to="/main-page/manage_devices" style={{ textDecoration: 'none' }} >
+                                <ListItemText style={{ marginLeft: '20px', color: '#737373' }} primary="ManageDevices" onClick={popupState.close} />
+                            </Link>
+
                         </ListItem>
                     </Collapse>
                 }

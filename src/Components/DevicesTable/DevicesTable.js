@@ -34,46 +34,49 @@ export const DevicesTable = () => {
         return () => {
             source.cancel()
         }
-    }, [data]);
+    }, []);
 
     return(
-        <Table style={{ width: '35%', marginRight: '120px', marginTop: '40px' }}>
+        <div className="devices-table">
+            <Table>
 
-            <TableHead>
+                <TableHead>
 
-                <TableRow>
+                    <TableRow>
 
-                    <TableCell>
-                        Device
-                    </TableCell>
+                        <TableCell>
+                            Device
+                        </TableCell>
 
-                    <TableCell align="right">
-                        User
-                    </TableCell>
+                        <TableCell align="right">
+                            User
+                        </TableCell>
 
-                </TableRow>
+                    </TableRow>
 
-            </TableHead>
+                </TableHead>
 
-            { isLoaded &&
-                <TableBody>
+                { isLoaded &&
+                    <TableBody>
 
-                    {
-                        data.map( ( item, index ) => {
-                            return <TableRow key={index}>
-                                <TableCell>
-                                    { item.device_name }
-                                </TableCell>
+                        {
+                            data.map( ( item, index ) => {
+                                return <TableRow key={index}>
+                                    <TableCell>
+                                        { item.device_name }
+                                    </TableCell>
 
-                                <TableCell align="right">
-                                    { item.user ? item.user.fullName : 'None' }
-                                </TableCell>
-                            </TableRow>
-                        })
-                    }
+                                    <TableCell align="right">
+                                        { item.user ? item.user.fullName : 'None' }
+                                    </TableCell>
+                                </TableRow>
+                            })
+                        }
 
-                </TableBody>
-            }
-        </Table>
+                    </TableBody>
+                }
+
+            </Table>
+        </div>
     )
 };

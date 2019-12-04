@@ -1,5 +1,5 @@
 import React, { useContext, Fragment } from 'react'
-import { AdminContext } from '../../../Admin/AdminContext/AdminContext';
+import { AdminContext } from '../../../AddUser/AdminContext/AdminContext';
 
 export const UserButtons = () => {
     const { setIsRedirect, returnBack } = useContext(AdminContext);
