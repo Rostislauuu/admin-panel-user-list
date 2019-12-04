@@ -1,11 +1,11 @@
 import React, { Fragment, useContext } from 'react'
 import { useParams } from 'react-router-dom';
-import { AdminContext } from '../../../Admin/AdminContext/AdminContext';
+import { AdminContext } from '../../../AddUser/AdminContext/AdminContext';
 
 export const AdminButtons = ({ setIsUpdating }) => {
     const { setIsRedirect, returnBack, deleteUser } = useContext(AdminContext);
-
     let { id } = useParams();
+
     const onDelete = () => {
         deleteUser(id);
         setIsRedirect(true);

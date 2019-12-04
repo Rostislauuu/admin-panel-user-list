@@ -10,7 +10,7 @@ const useFetch = url => {
             const response = await fetch(url);
             const data = await response.json();
             setUsers(data);
-        }
+        };
 
         fetchData();
     }, [] );
@@ -24,7 +24,7 @@ export const UsersList = () => {
     const [ users, setUsers ] = useState( fetchedData || emptyString );
     
     useEffect ( () => {
-        if ( fetchedData !== emptyString ){
+        if ( fetchedData !== emptyString ) {
             setUsers(fetchedData);
         }
 
@@ -46,7 +46,7 @@ export const UsersList = () => {
     return(
         <div className="information-user-root">
             <Search  searchValue={searchValue} handleSetSearchValue={handleSetSearchValue} />
-            {filteredList}
+            { filteredList }
         </div>
     )
 };

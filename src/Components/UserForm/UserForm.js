@@ -165,7 +165,7 @@ export const UserFormValidation = withFormik({
     validateOnBlur: false,
     validateOnChange: false,
 
-    mapPropsToValues({pathname, id, selectedUser, setIsUpdating, setSelectedUser}) {
+    mapPropsToValues({ pathname, id, selectedUser, setIsUpdating, setSelectedUser }) {
         return {
             id,
             ...selectedUser,
