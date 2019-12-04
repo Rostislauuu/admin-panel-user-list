@@ -2,7 +2,7 @@ import React from 'react';
 import { UserFormValidation } from '../../../../Components/UserForm/UserForm';
 import './style/style.css';
 
-export const Admin = ({ location }) => {
+export const AddUser = ({ location }) => {
     const { pathname } = location;
     const selectedUser = {
         fullName: '',

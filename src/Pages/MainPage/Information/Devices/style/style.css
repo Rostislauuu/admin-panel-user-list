@@ -15,4 +15,35 @@
   width: 25%;
 }
 
+.manage-devices-action {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.devices-table {
+  width: 40%;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #3a53b4;
+  border-radius: 3px;
+}
+
+.first-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.first-row button {
+  margin: 0 53px;
+}
+
+.second-row {
+  display: flex;
+  justify-content: center;
+}
+.second-row button {
+  margin: 0 36px;
+}
+
 /*# sourceMappingURL=style.css.map */

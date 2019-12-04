@@ -10,11 +10,11 @@ export const App = () => {
   return(
     <BrowserRouter>
       <RoleContextProvider>
-        
+
         <LoginPage />
 
         <PrivateRoute path="/main-page">
-          <MainPage />
+            <MainPage />
         </PrivateRoute>
 
       </RoleContextProvider>
