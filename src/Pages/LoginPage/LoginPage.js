@@ -47,8 +47,8 @@ const LoginPage = ({ errors, touched }) => {
                             </p>
                         }
 
-                        <Field type="text" name="login" placeholder="Login"
-                               validate={validateLogin} component={TextField}
+                        <Field type="text" label="Login" name="login" validate={validateLogin}
+                               component={TextField}
                         />
                     </Fragment>
 
@@ -60,8 +60,8 @@ const LoginPage = ({ errors, touched }) => {
                             </p>
                         }
 
-                        <Field type="password" name="password" placeholder="Password" className="login-form-input"
-                               validate={validatePassword} component={TextField}
+                        <Field type="password" label="Password" name="password" validate={validatePassword}
+                               component={TextField} style={{ marginTop: '10px' }}
                         />
 
                     </Fragment>

@@ -1,5 +1,6 @@
 import React, { useContext, Fragment } from 'react'
 import { AdminContext } from '../../../AddUser/AdminContext/AdminContext';
+import Button from '@material-ui/core/Button';
 
 export const UserButtons = () => {
     const { setIsRedirect, returnBack } = useContext(AdminContext);
@@ -8,9 +9,9 @@ export const UserButtons = () => {
         <Fragment>
             {returnBack()}
             
-            <button onClick={() => setIsRedirect(true)}>
+            <Button variant="contained" color="primary" onClick={() => setIsRedirect(true)}>
                 Back
-            </button>   
+            </Button>
         </Fragment>
     )
 };
