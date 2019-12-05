@@ -1,9 +1,10 @@
 import React, { useContext} from 'react';
 import { Link } from 'react-router-dom';
 import { RoleContext } from '../../LoginPage/RoleContext/RoleContext';
+import Button from '@material-ui/core/Button';
 
 export const Header = () => {
-    const { logOut } = useContext(RoleContext)
+    const { logOut } = useContext(RoleContext);
 
     return (
         <header className="header">
@@ -13,9 +14,11 @@ export const Header = () => {
                 />
             </Link>
 
-            <button onClick={logOut}>
+            <Button variant="contained" color="primary" onClick={logOut}
+                    style={{ width: '11%' }}
+            >
                 Log Out
-            </button>
+            </Button>
         </header>
     )
 };

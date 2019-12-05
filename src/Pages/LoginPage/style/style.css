@@ -30,18 +30,6 @@
   margin-top: 30px;
   font-size: 14px;
   font-weight: 900;
-  color: #212121;
-  background: #97b7ea;
-  transition: background 0.3s linear;
-  outline: none;
-}
-.login-form-box button:hover {
-  background: #c9e9ff;
-  cursor: pointer;
-}
-
-.login-form-input input {
-  margin-top: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

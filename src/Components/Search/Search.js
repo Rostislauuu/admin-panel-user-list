@@ -1,11 +1,12 @@
 import React from 'react';
+import TextField from '@material-ui/core/TextField';
 
 export const Search = ({ handleSetSearchValue, searchValue }) => {
     return (
         <div className="search" >
-            <input
-                onChange={e => handleSetSearchValue(e.target.value)}
-                value={searchValue} type="text" placeholder="Search..."
+            <TextField
+                label="Search" value={searchValue} type="text"
+                onChange={ e => handleSetSearchValue(e.target.value)}
             />
         </div>
     )
