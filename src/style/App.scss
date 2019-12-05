@@ -13,22 +13,11 @@
   align-items: center;
 
   button {
-    width: 5%;
     margin-right: 20px;
     line-height: 2.1em;
     border: none;
     border-radius: 3px;
     font-size: 14px;
-    color: $textColor;
-    font-weight: 700;
-    background: $navAndButtonBg;
-    transition: $bgTransition;
-    outline: none;
-
-    &:hover {
-      background: $navAndButtonHover;
-      cursor: pointer;
-    }
   }
 }
 
@@ -56,11 +45,12 @@
   position: relative;
   bottom: 0;
   padding: 5px 0;
-  background: $navAndButtonBg;
+  background: #3a53b4;
 
   p {
-    margin: 7px 0 0 10px;
+    margin: 5px 0 0 10px;
     font-weight: 700;
+    color: $whiteColor;
   }
 }
 
@@ -176,12 +166,6 @@
     }
   }
 
-  .header {
-    button {
-      width: 10%;
-    }
-  }
-
   .user-form {
     button {
       width: 50%;
@@ -230,12 +214,6 @@
   .user-editing {
     button {
       width: 50%;
-    }
-  }
-
-  .header {
-    button {
-      width: 13%;
     }
   }
 

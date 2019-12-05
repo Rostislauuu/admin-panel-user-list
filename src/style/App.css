@@ -11,21 +11,11 @@
   align-items: center;
 }
 .header button {
-  width: 5%;
   margin-right: 20px;
   line-height: 2.1em;
   border: none;
   border-radius: 3px;
   font-size: 14px;
-  color: #212121;
-  font-weight: 700;
-  background: #97b7ea;
-  transition: background 0.3s linear;
-  outline: none;
-}
-.header button:hover {
-  background: #c9e9ff;
-  cursor: pointer;
 }
 
 .header-image {
@@ -52,11 +42,12 @@
   position: relative;
   bottom: 0;
   padding: 5px 0;
-  background: #97b7ea;
+  background: #3a53b4;
 }
 .footer p {
-  margin: 7px 0 0 10px;
+  margin: 5px 0 0 10px;
   font-weight: 700;
+  color: #ffffff;
 }
 
 @media (max-width: 1600px) {
@@ -153,10 +144,6 @@
     width: 25%;
   }
 
-  .header button {
-    width: 10%;
-  }
-
   .user-form button {
     width: 50%;
   }
@@ -196,10 +183,6 @@
 
   .user-editing button {
     width: 50%;
-  }
-
-  .header button {
-    width: 13%;
   }
 
   .user-form button {

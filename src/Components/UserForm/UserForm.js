@@ -3,6 +3,7 @@ import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { Select } from 'formik-material-ui';
 import MenuItem from '@material-ui/core/MenuItem';
+import Button from '@material-ui/core/Button';
 import { FormHelperText } from '@material-ui/core';
 import { TextField } from 'formik-material-ui';
 import { directions } from './directions';
@@ -26,9 +27,6 @@ const UserForm = ({touched, errors, values}) => {
     return(
         <Form className="user-form">
 
-            <label>
-                Name
-            </label>
             <Fragment>
 
                 {touched.fullName && errors.fullName &&
@@ -37,12 +35,9 @@ const UserForm = ({touched, errors, values}) => {
                     </p>
                 }
 
-                <Field type="text" name="fullName" value={values.fullName} component={TextField} />
+                <Field type="text" label="Name" name="fullName" value={values.fullName} component={TextField} />
             </Fragment>
 
-            <label>
-                Birthday
-            </label>
             <Fragment>
 
                 {touched.birthday && errors.birthday &&
@@ -51,12 +46,11 @@ const UserForm = ({touched, errors, values}) => {
                     </p>
                 }
 
-                <Field type="text" name="birthday" value={values.birthday} component={TextField} />
+                <Field type="text" label="Birthday" name="birthday" value={values.birthday} component={TextField}
+                       style={{ marginTop: '15px' }}
+                />
             </Fragment>
 
-            <label>
-                Direction
-            </label>
             <Fragment>
 
                 {touched.direction && errors.direction &&
@@ -65,7 +59,9 @@ const UserForm = ({touched, errors, values}) => {
                     </FormHelperText>
                 }
 
-                <Field name="direction" component={Select} displayEmpty={true} className="select-field" >
+                <Field name="direction" component={Select} displayEmpty={true}
+                        style={{ marginTop: '35px' }} className="select-field"
+                >
 
                     {!values.selectedUser.direction &&
                         <MenuItem value="">
@@ -89,9 +85,6 @@ const UserForm = ({touched, errors, values}) => {
 
             </Fragment>
 
-            <label>
-                Subdirection
-            </label>
             <Fragment>
 
                 {touched.subdirection && errors.subdirection &&
@@ -100,8 +93,8 @@ const UserForm = ({touched, errors, values}) => {
                     </FormHelperText>
                 }
 
-                <Field name="subdirection" component={Select} displayEmpty={true}
-                       disabled={isDirection} className="select-field"
+                <Field name="subdirection" component={Select} displayEmpty={true} disabled={isDirection}
+                       style={{ marginTop: '35px' }} className="select-field"
                 >
 
                     {!values.selectedUser.subdirection  &&
@@ -125,9 +118,6 @@ const UserForm = ({touched, errors, values}) => {
                 </Field>
             </Fragment>
 
-            <label>
-                Email
-            </label>
             <Fragment>
 
                 {touched.email && errors.email &&
@@ -136,12 +126,11 @@ const UserForm = ({touched, errors, values}) => {
                     </p>
                 }
 
-                <Field type="email" name="email" value={values.email} component={TextField} />
+                <Field type="email" label="Email" name="email" value={values.email} component={TextField}
+                       style={{ marginTop: '15px' }}
+                />
             </Fragment>
 
-            <label>
-                Phone
-            </label>
             <Fragment>
 
                 {touched.phone && errors.phone &&
@@ -150,12 +139,16 @@ const UserForm = ({touched, errors, values}) => {
                     </p>
                 }
 
-                <Field type="text" name="phone" value={values.phone} component={TextField} />
+                <Field type="text" label="Phone" name="phone" value={values.phone} component={TextField}
+                       style={{ marginTop: '15px' }}
+                />
             </Fragment>
 
-            <button type="submit">
+            <Button variant="contained" color="primary" type="submit"
+                    style={{ marginTop: '30px' }}
+            >
                 Submit
-            </button>
+            </Button>
 
         </Form>
     )
