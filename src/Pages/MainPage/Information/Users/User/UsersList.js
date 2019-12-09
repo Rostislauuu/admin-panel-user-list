@@ -1,40 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { UserCard } from  './UserCard';
 import { Search } from '../../../../../Components/Search/Search';
 
-const useFetch = url => {
-    const [ users, setUsers ] = useState([ ]);
-
-    useEffect( () => {
-        const fetchData = async () => {
-            const response = await fetch(url);
-            const data = await response.json();
-            setUsers(data);
-        };
-
-        fetchData();
-    }, [] );
-
-    return users;
-};
-
 export const UsersList = () => {
+    const users = useSelector( state => state.users );
     const emptyString = '';
-    const fetchedData = useFetch("http://test-api-vakoms.herokuapp.com/users");
-    const [ users, setUsers ] = useState( fetchedData || emptyString );
-    
-    useEffect ( () => {
-        if ( fetchedData !== emptyString ) {
-            setUsers(fetchedData);
-        }
+    const [ searchValue, setSearchValue ] = useState(emptyString);
 
-    }, [fetchedData] );
-
-    const usersList = users.map( item => {
-        return <UserCard key={item.id}   user={item} />
+    const usersList = users.map( ( item, index ) => {
+        return <UserCard key={index} user={item} />
     });
 
-    const [ searchValue, setSearchValue ] = useState(emptyString);
     const handleSetSearchValue = value => {
         setSearchValue(value);
     };

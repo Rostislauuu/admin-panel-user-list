@@ -1,34 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 import { Pie } from 'react-chartjs-2';
+import { useSelector } from 'react-redux';
 
 export const Chart = () => {
-    const [ chartData, setChartData ] = useState({});
-
-    useEffect( () => {
-        const source = axios.CancelToken.source();
-        const fetchData = async () => {
-            try {
-                const response = await axios.get('http://test-api-vakoms.herokuapp.com/charts/data', {
-                    cancelToken: source.token
-                });
-
-                setChartData(response.data);
-            } catch (error) {
-                if( axios.isCancel(error) ) {
-                    console.log('cancel request');
-                } else {
-                    throw error;
-                }
-            }
-        };
-
-        fetchData();
-
-        return () => {
-            source.cancel()
-        }
-    }, []);
+    const chartData = useSelector( state => state.chart );
 
     const data = {
         labels: chartData.labels,
@@ -52,7 +27,7 @@ export const Chart = () => {
     };
 
     return(
-        <div style={{marginRight: '20px'}}>
+        <div style={{ marginRight: '20px', marginBottom: '20px' }}>
             <Pie data={data} options={options} />
         </div>
     )

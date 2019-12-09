@@ -61,7 +61,7 @@ export const SidebarUser = () => {
                 onClick={handleClick}
                 { ...bindTrigger(popupState) }
             >
-                Open Sidebar
+                Sidebar
             </Button>
 
             <StyledMenu

@@ -2,13 +2,16 @@ import React, { Fragment, useContext } from 'react'
 import { useParams } from 'react-router-dom';
 import { AdminContext } from '../../../AddUser/AdminContext/AdminContext';
 import Button from '@material-ui/core/Button';
+import { useDispatch } from 'react-redux';
+import { deleteUser } from '../../../../../../store/actions/users/deleteUser';
 
 export const AdminButtons = ({ setIsUpdating }) => {
-    const { setIsRedirect, returnBack, deleteUser } = useContext(AdminContext);
+    const dispatch = useDispatch();
+    const { setIsRedirect, returnBack } = useContext(AdminContext);
     let { id } = useParams();
 
     const onDelete = () => {
-        deleteUser(id);
+        dispatch( deleteUser(id) );
         setIsRedirect(true);
     };
 

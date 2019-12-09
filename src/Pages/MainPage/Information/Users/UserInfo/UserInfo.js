@@ -5,10 +5,12 @@ import { UserFormValidation } from '../../../../../Components/UserForm/UserForm'
 import { UserInfoImg } from './UserInfoImg/UserInfoImg';
 import { Buttons } from './Buttons/Buttons';
 import { AdminContextProvider }  from '../../AddUser/AdminContext/AdminContext';
+import { useDispatch } from "react-redux";
 
 export const UserInfo = () => {
     const [ selectedUser, setSelectedUser ] = useState({});
     const [ isUpdating, setIsUpdating ] = useState(false);
+    const dispatch = useDispatch();
     let { id } = useParams();
 
     const fetchData = async () => {
@@ -42,7 +44,7 @@ export const UserInfo = () => {
 
             { isUpdating && 
                 <div className="user-editing">
-                    <UserFormValidation id={id} selectedUser={selectedUser}
+                    <UserFormValidation id={id} selectedUser={selectedUser} dispatch={dispatch}
                         setIsUpdating={setIsUpdating} setSelectedUser={setSelectedUser}
                     />
                 </div>

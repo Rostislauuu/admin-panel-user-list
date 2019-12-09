@@ -4,18 +4,26 @@ import * as Yup from 'yup';
 import { Select } from 'formik-material-ui';
 import MenuItem from '@material-ui/core/MenuItem';
 import Button from '@material-ui/core/Button';
-import { FormHelperText } from '@material-ui/core';
 import { TextField } from 'formik-material-ui';
 import { directions } from './directions';
 import { subdirections } from './subdirections';
+import { addUser } from '../../store/actions/users/addUser';
+import { updateUser } from '../../store/actions/users/updateUser';
 
 const adminRoutePath = "/main-page/admin";
 
-const UserForm = ({touched, errors, values}) => {
+const UserForm = ({ errors, values }) => {
     let isDirection = !values.direction;
     const  subdirectionsToShow = subdirections.filter( item => {
         return values.direction === item.type ? item.typeName : null
     });
+
+    const fullNameError = !!errors.fullName;
+    const birthdayError = !!errors.birthday;
+    const directionError = !!errors.direction;
+    const subdirectionError = !!errors.subdirection;
+    const emailError = !!errors.email;
+    const phoneError = !!errors.phone;
 
     useEffect( () => {
         if( values.pathname === adminRoutePath ) {
@@ -28,42 +36,23 @@ const UserForm = ({touched, errors, values}) => {
         <Form className="user-form">
 
             <Fragment>
-
-                {touched.fullName && errors.fullName &&
-                    <p style={{display: 'none'}}>
-                        {errors.fullName}
-                    </p>
-                }
-
-                <Field type="text" label="Name" name="fullName" value={values.fullName} component={TextField} />
-            </Fragment>
-
-            <Fragment>
-
-                {touched.birthday && errors.birthday &&
-                    <p style={{display: 'none'}}>
-                        {errors.birthday}
-                    </p>
-                }
-
-                <Field type="text" label="Birthday" name="birthday" value={values.birthday} component={TextField}
-                       style={{ marginTop: '15px' }}
+                <Field type="text" label="Name" name="fullName" value={values.fullName}
+                       error={fullNameError} component={TextField}
                 />
             </Fragment>
 
             <Fragment>
+                <Field type="text" label="Birthday" name="birthday" value={values.birthday}
+                       component={TextField} error={birthdayError} style={{ marginTop: '15px' }}
+                />
+            </Fragment>
 
-                {touched.direction && errors.direction &&
-                    <FormHelperText style={{color: 'red'}}>
-                        { errors.direction }
-                    </FormHelperText>
-                }
-
-                <Field name="direction" component={Select} displayEmpty={true}
+            <Fragment>
+                <Field name="direction" component={Select} displayEmpty={true} error={directionError}
                         style={{ marginTop: '35px' }} className="select-field"
                 >
 
-                    {!values.selectedUser.direction &&
+                    { !values.selectedUser.direction &&
                         <MenuItem value="">
                             <em>
                                 Select Direction
@@ -86,18 +75,11 @@ const UserForm = ({touched, errors, values}) => {
             </Fragment>
 
             <Fragment>
-
-                {touched.subdirection && errors.subdirection &&
-                    <FormHelperText style={{color: 'red'}}>
-                        { errors.subdirection }
-                    </FormHelperText>
-                }
-
                 <Field name="subdirection" component={Select} displayEmpty={true} disabled={isDirection}
-                       style={{ marginTop: '35px' }} className="select-field"
+                       error={subdirectionError} style={{ marginTop: '35px' }} className="select-field"
                 >
 
-                    {!values.selectedUser.subdirection  &&
+                    { !values.selectedUser.subdirection  &&
                         <MenuItem value="">
                             <em>
                                 Select Subdirection
@@ -119,28 +101,14 @@ const UserForm = ({touched, errors, values}) => {
             </Fragment>
 
             <Fragment>
-
-                {touched.email && errors.email &&
-                    <p style={{display: 'none'}}>
-                        {errors.email}
-                    </p>
-                }
-
-                <Field type="email" label="Email" name="email" value={values.email} component={TextField}
-                       style={{ marginTop: '15px' }}
+                <Field type="email" label="Email" name="email" value={values.email}
+                       component={TextField} error={emailError} style={{ marginTop: '15px' }}
                 />
             </Fragment>
 
             <Fragment>
-
-                {touched.phone && errors.phone &&
-                    <p style={{display: 'none'}}>
-                        {errors.phone}
-                    </p>
-                }
-
-                <Field type="text" label="Phone" name="phone" value={values.phone} component={TextField}
-                       style={{ marginTop: '15px' }}
+                <Field type="text" label="Phone" name="phone" value={values.phone}
+                       component={TextField} error={phoneError} style={{ marginTop: '15px' }}
                 />
             </Fragment>
 
@@ -158,14 +126,15 @@ export const UserFormValidation = withFormik({
     validateOnBlur: false,
     validateOnChange: false,
 
-    mapPropsToValues({ pathname, id, selectedUser, setIsUpdating, setSelectedUser }) {
+    mapPropsToValues({ pathname, id, selectedUser, setIsUpdating, setSelectedUser, dispatch }) {
         return {
             id,
             ...selectedUser,
             pathname,
             selectedUser: selectedUser || '', // for image
             setIsUpdating,
-            setSelectedUser
+            setSelectedUser,
+            dispatch
         }
     },
 
@@ -180,6 +149,7 @@ export const UserFormValidation = withFormik({
 
     handleSubmit(values, {resetForm}) {
         const dataToSend = {
+            id: values.selectedUser.id,
             fullName: values.fullName,
             birthday: values.birthday,
             direction: values.direction,
@@ -190,22 +160,10 @@ export const UserFormValidation = withFormik({
         };
 
         if (values.pathname === adminRoutePath) {
-            fetch("http://test-api-vakoms.herokuapp.com/users/", {
-                method: "POST",
-                header: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(dataToSend)
-            });
-        } else {
-            fetch(`http://test-api-vakoms.herokuapp.com/users/${values.id}`, {
-                method: "PUT",
-                header: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(dataToSend)
-            });
+            values.dispatch( addUser(dataToSend) );
 
+        } else {
+            values.dispatch( ( updateUser(dataToSend)) );
             setTimeout(() => values.setIsUpdating(false), 1);
             values.setSelectedUser(dataToSend);
         }
