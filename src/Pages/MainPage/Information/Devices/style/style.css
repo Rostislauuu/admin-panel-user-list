@@ -29,14 +29,20 @@
   border-radius: 3px;
 }
 
-.manage-devices-table {
+.manage-devices-table-root {
+  width: 100%;
   display: flex;
   justify-content: center;
 }
-.manage-devices-table table {
+
+.manage-devices-table {
   width: 50%;
+  display: flex;
+  justify-content: center;
+  border: 1px solid #3a53b4;
+  border-radius: 3px;
+  padding: 10px 15px;
   margin-bottom: 30px;
-  padding: 10px;
 }
 
 .first-row {

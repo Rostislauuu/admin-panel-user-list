@@ -20,15 +20,11 @@ export default function devices ( state = initialState, action ) {
             ];
 
         case Types.UPDATE_DEVICE:
-            // axios.put(`http://test-api-vakoms.herokuapp.com/users_devices/${values.device}`, {
-            //     device_name: values.newValue
-            // });
-
-            // return [
-            //     ...state.slice( 0, state.findIndex( obj => obj.id === action.payload.device ) ),
-            //      PUT HERE UPDATED OBJECT
-            //     ...state.slice( state.findIndex( obj => obj.id === action.payload.device ) + 1 )
-            // ];
+            return [
+                ...state.slice( 0, state.findIndex( obj => obj.id === action.payload.id ) ),
+                 action.payload,
+                ...state.slice( state.findIndex( obj => obj.id === action.payload.id ) + 1 )
+            ];
 
         default: return state
     }

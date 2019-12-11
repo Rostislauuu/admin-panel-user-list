@@ -115,6 +115,10 @@
     display: flex;
     justify-content: center;
   }
+
+  .manage-devices-table {
+    width: 50%;
+  }
 }
 @media (max-width: 950px) {
   .col-1-3 {
@@ -147,6 +151,10 @@
 
   .user-form button {
     width: 50%;
+  }
+
+  .manage-devices-table {
+    width: 63%;
   }
 }
 @media (max-width: 750px) {
@@ -188,6 +196,10 @@
 
   .user-form button {
     width: 50%;
+  }
+
+  .manage-devices-table {
+    width: 70%;
   }
 }
 
