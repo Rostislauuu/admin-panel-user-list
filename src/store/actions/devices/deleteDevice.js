@@ -1,8 +1,8 @@
 import * as Types from '../../types/types';
 
-export const deleteUser = id => {
+export const deleteDevice = id => {
     return {
-        type: Types.DELETE_USER,
+        type: Types.DELETE_DEVICE,
         id
     }
 };

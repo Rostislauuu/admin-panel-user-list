@@ -25,6 +25,7 @@
 
 .wrapper {
   min-height: calc(100vh - 40px);
+  background: #e8dcf9;
 }
 
 .main {

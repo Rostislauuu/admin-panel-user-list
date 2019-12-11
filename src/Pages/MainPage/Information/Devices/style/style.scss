@@ -18,7 +18,7 @@
 .manage-devices-action {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .devices-table {
@@ -27,6 +27,18 @@
   padding: 10px;
   border: 1px solid #3a53b4;
   border-radius: 3px;
+}
+
+.manage-devices-table {
+  display: flex;
+  justify-content: center;
+
+  table {
+    width: 50%;
+    margin-bottom: 30px;
+    padding: 10px;
+
+  }
 }
 
 .first-row {

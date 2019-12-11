@@ -79,6 +79,12 @@ export const SidebarUser = () => {
                     </Link>
                 </StyledMenuItem>
 
+                <StyledMenuItem>
+                    <Link to="/main-page/devices_list" style={{ textDecoration: 'none', color: '#212121' }} >
+                        <ListItemText primary="Devices List" onClick={popupState.close} />
+                    </Link>
+                </StyledMenuItem>
+
             </StyledMenu>
         </div>
     );

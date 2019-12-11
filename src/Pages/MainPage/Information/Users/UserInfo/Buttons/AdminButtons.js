@@ -4,6 +4,7 @@ import { AdminContext } from '../../../AddUser/AdminContext/AdminContext';
 import Button from '@material-ui/core/Button';
 import { useDispatch } from 'react-redux';
 import { deleteUser } from '../../../../../../store/actions/users/deleteUser';
+import axios from "axios";
 
 export const AdminButtons = ({ setIsUpdating }) => {
     const dispatch = useDispatch();
@@ -11,6 +12,7 @@ export const AdminButtons = ({ setIsUpdating }) => {
     let { id } = useParams();
 
     const onDelete = () => {
+        axios.delete(`http://test-api-vakoms.herokuapp.com/users/${id}`);
         dispatch( deleteUser(id) );
         setIsRedirect(true);
     };

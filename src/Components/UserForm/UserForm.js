@@ -9,6 +9,7 @@ import { directions } from './directions';
 import { subdirections } from './subdirections';
 import { addUser } from '../../store/actions/users/addUser';
 import { updateUser } from '../../store/actions/users/updateUser';
+import axios from "axios";
 
 const adminRoutePath = "/main-page/admin";
 
@@ -160,10 +161,13 @@ export const UserFormValidation = withFormik({
         };
 
         if (values.pathname === adminRoutePath) {
-            values.dispatch( addUser(dataToSend) );
+            axios.post('http://test-api-vakoms.herokuapp.com/users/', dataToSend)
+                .then( user => values.dispatch( addUser(user.data) ) );
 
         } else {
-            values.dispatch( ( updateUser(dataToSend)) );
+            axios.put(`http://test-api-vakoms.herokuapp.com/users/${values.id}`, dataToSend)
+                .then( user => values.dispatch( updateUser(user.data) ) );
+
             setTimeout(() => values.setIsUpdating(false), 1);
             values.setSelectedUser(dataToSend);
         }
