@@ -61,7 +61,7 @@ export const SidebarUser = () => {
                 onClick={handleClick}
                 { ...bindTrigger(popupState) }
             >
-                Open Sidebar
+                Sidebar
             </Button>
 
             <StyledMenu
@@ -76,6 +76,12 @@ export const SidebarUser = () => {
                 <StyledMenuItem>
                     <Link  to="/main-page/users" style={{ textDecoration: 'none', color: '#212121' }} >
                         <ListItemText primary="Users List" onClick={popupState.close} />
+                    </Link>
+                </StyledMenuItem>
+
+                <StyledMenuItem>
+                    <Link to="/main-page/devices_list" style={{ textDecoration: 'none', color: '#212121' }} >
+                        <ListItemText primary="Devices List" onClick={popupState.close} />
                     </Link>
                 </StyledMenuItem>
 

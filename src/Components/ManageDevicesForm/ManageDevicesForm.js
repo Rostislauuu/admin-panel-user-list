@@ -1,16 +1,16 @@
-import React, {Fragment, useContext } from 'react';
+import React, { Fragment } from 'react';
 import {Select, TextField} from 'formik-material-ui';
 import MenuItem from '@material-ui/core/MenuItem';
 import Button from '@material-ui/core/Button';
 import { withFormik, Field, Form } from 'formik';
-import axios from 'axios';
-import { ManageDevicesContext } from '../../Pages/MainPage/Information/Devices/ManageDevices/ManageDevicesContext/ManageDevicesContext';
+import { useSelector } from 'react-redux';
+import { addDevice } from '../../store/actions/devices/addDevice';
+import {applyDevice} from "../../store/actions/devices/applyDevice";
+import axios from "axios";
 
 const permission = {
     apply: 'Apply',
-    add: 'Add',
-    update: 'Update',
-    delete: 'Delete',
+    add: 'Add'
 };
 
 const validateDevice = device => {
@@ -44,20 +44,21 @@ const validateNewValue = newValue => {
 };
 
 const ManageDevicesForm = ({ values, errors }) => {
+    const devices = useSelector( state => state.devices );
+    const users = useSelector( state => state.users );
     const userError = !!errors.user;
     const deviceError = !!errors.device;
     const newValueError = !!errors.newValue;
-    const { devices, users, isLoaded } = useContext(ManageDevicesContext);
 
     return(
-        <Form style={{ display: 'flex', flexDirection: 'column', marginTop: '50px' }}>
+        <Form style={{ display: 'flex', flexDirection: 'column' }}>
            <Fragment>
 
-               { ( isLoaded && values.permission === permission.apply ) &&
+               { values.permission === permission.apply  &&
                    <Fragment>
 
                        <Field name="device" component={Select} displayEmpty={true} error={deviceError}
-                              validate={validateNewValue} className="device-select" style={{ width: '100%' }}
+                              validate={validateDevice} className="device-select" style={{ width: '100%' }}
                        >
                            <MenuItem value="">
                                <em>
@@ -101,65 +102,10 @@ const ManageDevicesForm = ({ values, errors }) => {
                    </Fragment>
                }
 
-               { ( isLoaded && values.permission === permission.add ) &&
+               { values.permission === permission.add &&
                    <Field type="text" name="newValue" label="New Device" validate={validateNewValue}
                           error={newValueError} component={TextField} style={{ marginTop: '20px' }}
                    />
-               }
-
-               { ( isLoaded && values.permission === permission.update ) &&
-                   <Fragment>
-
-                       <Field name="device" component={Select} displayEmpty={true}
-                              validate={validateDevice} error={deviceError}
-                       >
-                           <MenuItem value="">
-                               <em>
-                                   Select Device
-                               </em>
-                           </MenuItem>
-
-                           {
-                               devices.map( ( item, index ) => {
-                                   return <MenuItem key={index} value={item.id}>
-                                       <em>
-                                           { item.device_name }
-                                       </em>
-                                   </MenuItem>
-                               })
-                           }
-
-                       </Field>
-
-                       <Field type="text" name="newValue" label="New Value" validate={validateNewValue}
-                              error={newValueError} component={TextField} style={{ marginTop: '20px' }}
-                       />
-
-                   </Fragment>
-               }
-
-               { ( isLoaded && values.permission === permission.delete ) &&
-                   <Field name="device" component={Select} displayEmpty={true}
-                          validate={validateDevice} error={deviceError}
-                   >
-                       <MenuItem value="">
-                           <em>
-                               Select Device
-                           </em>
-                       </MenuItem>
-
-                       {
-                           devices.map( ( item, index ) => {
-                               return <MenuItem key={index} value={item.id}>
-                                   <em>
-                                       { item.device_name }
-                                   </em>
-                               </MenuItem>
-                           })
-                       }
-
-                   </Field>
-
                }
 
                <Button type="submit" variant="contained" color="primary" style={{ marginTop: '20px' }}>
@@ -175,13 +121,14 @@ export default withFormik({
     validateOnBlur: false,
     validateOnChange: false,
 
-    mapPropsToValues({ user, device, newValue, buttonName, permission, }) {
+    mapPropsToValues({ user, device, newValue, buttonName, permission, dispatch }) {
         return {
             user: user || '',
             device: device || '',
             newValue: newValue || '',
             buttonName: buttonName || '',
             permission: permission || '',
+            dispatch
         }
     },
 
@@ -189,20 +136,12 @@ export default withFormik({
         if( values.permission === permission.apply ) {
             axios.put(`http://test-api-vakoms.herokuapp.com/users_devices/${values.device}`, {
                 user: values.user
-            });
+            }).then( device => values.dispatch( applyDevice(device.data) ))
 
         } else if( values.permission === permission.add ) {
             axios.post('http://test-api-vakoms.herokuapp.com/users_devices/', {
                 device_name: values.newValue
-            });
-
-        } else if( values.permission === permission.update ) {
-            axios.put(`http://test-api-vakoms.herokuapp.com/users_devices/${values.device}`, {
-                device_name: values.newValue
-            });
-
-        } else if( values.permission === permission.delete ) {
-            axios.delete(`http://test-api-vakoms.herokuapp.com/users_devices/${values.device}`)
+            }).then( device => values.dispatch( addDevice(device.data) ) );
 
         }
 

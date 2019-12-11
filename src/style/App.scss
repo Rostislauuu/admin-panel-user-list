@@ -28,6 +28,7 @@
 
 .wrapper {
   min-height: calc(100vh - 40px);
+  background: #e8dcf9;
 }
 
 .main {
@@ -132,6 +133,10 @@
     display: flex;
     justify-content: center;
   }
+
+  .manage-devices-table {
+    width: 50%
+  }
 }
 
 @media( max-width: 950px ){
@@ -170,6 +175,10 @@
     button {
       width: 50%;
     }
+  }
+
+  .manage-devices-table {
+    width: 63%
   }
 }
 
@@ -221,5 +230,9 @@
     button {
       width: 50%;
     }
+  }
+
+  .manage-devices-table {
+    width: 70%
   }
 }

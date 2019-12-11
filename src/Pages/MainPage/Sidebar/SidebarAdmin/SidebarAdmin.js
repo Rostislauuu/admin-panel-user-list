@@ -73,7 +73,7 @@ export const SidebarAdmin = () => {
                 onClick={handleClick}
                 { ...bindTrigger(popupState) }
             >
-                Open Sidebar
+                Sidebar
             </Button>
 
             <StyledMenu
