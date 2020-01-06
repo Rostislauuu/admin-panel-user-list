@@ -3,7 +3,12 @@
 .sidebar-root-box {
   flex-basis: 20%;
   max-width: 20%;
-  margin-left: 10px;
+  margin: 10px 0 0 10px;
+
+  button {
+    height: 70px;
+    width: 60%;
+  }
 }
 
 .sidebar-user-root {

@@ -1,0 +1,65 @@
+.devices-root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.devices-form {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.device-select {
+  width: 25%;
+}
+
+.manage-devices-action {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.devices-table {
+  width: 40%;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #3a53b4;
+  border-radius: 3px;
+}
+
+.manage-devices-table-root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.manage-devices-table {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  border: 1px solid #3a53b4;
+  border-radius: 3px;
+  padding: 10px 15px;
+  margin-bottom: 30px;
+}
+
+.first-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.first-row button {
+  margin: 0 53px;
+}
+
+.second-row {
+  display: flex;
+  justify-content: center;
+}
+.second-row button {
+  margin: 0 36px;
+}
+
+/*# sourceMappingURL=style.css.map */

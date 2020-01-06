@@ -1,0 +1,41 @@
+.information-admin-root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-user-form {
+  width: 30%;
+  margin-bottom: 20px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #97b7ea;
+  border-radius: 10px;
+}
+
+.information-admin {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.information-admin label:not(:first-child) {
+  margin: 15px 0 2px 0;
+}
+.information-admin label {
+  color: #606060;
+}
+.information-admin input {
+  height: 2em;
+  border-radius: 3px;
+  outline: none;
+}
+
+.select-field {
+  width: 100%;
+}
+
+/*# sourceMappingURL=style.css.map */

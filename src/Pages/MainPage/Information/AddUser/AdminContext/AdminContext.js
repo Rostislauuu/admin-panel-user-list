@@ -12,19 +12,8 @@ export const AdminContextProvider = ({ children }) => {
 
     };
 
-    const deleteUser = id => {
-        fetch(`http://test-api-vakoms.herokuapp.com/users/${id}` , {
-            method: 'DELETE'
-        });
-        
-        if(isRedirect) {
-            return <Redirect to="/main-page/users" />
-        }
-        
-    };
-
     return(
-        <AdminContext.Provider  value={{ setIsRedirect, returnBack, deleteUser }}>
+        <AdminContext.Provider value={{ setIsRedirect, returnBack }}>
             {children}
         </AdminContext.Provider>
     )

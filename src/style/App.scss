@@ -13,22 +13,11 @@
   align-items: center;
 
   button {
-    width: 5%;
     margin-right: 20px;
     line-height: 2.1em;
     border: none;
     border-radius: 3px;
     font-size: 14px;
-    color: $textColor;
-    font-weight: 700;
-    background: $navAndButtonBg;
-    transition: $bgTransition;
-    outline: none;
-
-    &:hover {
-      background: $navAndButtonHover;
-      cursor: pointer;
-    }
   }
 }
 
@@ -39,6 +28,7 @@
 
 .wrapper {
   min-height: calc(100vh - 40px);
+  background: #e8dcf9;
 }
 
 .main {
@@ -56,11 +46,12 @@
   position: relative;
   bottom: 0;
   padding: 5px 0;
-  background: $navAndButtonBg;
+  background: #3a53b4;
 
   p {
-    margin: 7px 0 0 10px;
+    margin: 5px 0 0 10px;
     font-weight: 700;
+    color: $whiteColor;
   }
 }
 
@@ -92,13 +83,18 @@
 
   .user-details-img {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
 
     img {
-      width: 65%;
-      height: 65%;
+      width: 80%;
+      height: 80%;
     }
+  }
+
+  .user-details-img-image {
+    display: flex;
+    justify-content: center;
   }
 
   .new-user-form {
@@ -122,13 +118,24 @@
 
   .user-details-img {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+
 
     img {
       width: 200px;
       height: 200px;
     }
+  }
+
+  .user-details-img-image {
+    display: flex;
+    justify-content: center;
+  }
+
+  .manage-devices-table {
+    width: 50%
   }
 }
 
@@ -148,8 +155,9 @@
 
   .user-details-img {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 
     img {
       width: 170px;
@@ -163,16 +171,14 @@
     }
   }
 
-  .header {
-    button {
-      width: 10%;
-    }
-  }
-
   .user-form {
     button {
       width: 50%;
     }
+  }
+
+  .manage-devices-table {
+    width: 63%
   }
 }
 
@@ -220,15 +226,13 @@
     }
   }
 
-  .header {
-    button {
-      width: 13%;
-    }
-  }
-
   .user-form {
     button {
       width: 50%;
     }
+  }
+
+  .manage-devices-table {
+    width: 70%
   }
 }
