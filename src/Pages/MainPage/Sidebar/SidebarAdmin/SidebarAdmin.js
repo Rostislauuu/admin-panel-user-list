@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItem from '@material-ui/core/ListItem';
 import Collapse from '@material-ui/core/Collapse';
+import { withStyles } from '@material-ui/core/styles';
 import { usePopupState, bindMenu, bindTrigger } from 'material-ui-popup-state/hooks';
 import { Link } from "react-router-dom";
 
@@ -41,7 +41,7 @@ const StyledMenuItem = withStyles(theme => ({
 }))(MenuItem);
 
 export const SidebarAdmin = () => {
-    const [anchorEl, setAnchorEl] = useState(null);
+    const [ anchorEl, setAnchorEl ] = useState(null);
     const [ isExpandUsers, setIsExpandUsers ] = useState(false);
     const [ isExpandDevices, setIsExpandDevices ] = useState(false);
     const popupState = usePopupState({ variant: 'popover', popupId: 'demoMenu' });
@@ -64,7 +64,6 @@ export const SidebarAdmin = () => {
 
     return (
         <div>
-
             <Button
                 aria-controls="customized-menu"
                 aria-haspopup="true"
@@ -117,23 +116,18 @@ export const SidebarAdmin = () => {
                 { isExpandDevices &&
                     <Collapse in={isExpandDevices} timeout="auto" unmountOnExit>
                         <ListItem button>
-
                             <Link to="/main-page/devices_list" style={{ textDecoration: 'none' }} >
                                 <ListItemText style={{ marginLeft: '20px', color: '#737373' }} primary="Devices List" onClick={popupState.close} />
                             </Link>
-
                         </ListItem>
 
                         <ListItem button>
-
                             <Link to="/main-page/manage_devices" style={{ textDecoration: 'none' }} >
                                 <ListItemText style={{ marginLeft: '20px', color: '#737373' }} primary="ManageDevices" onClick={popupState.close} />
                             </Link>
-
                         </ListItem>
                     </Collapse>
                 }
-
             </StyledMenu>
         </div>
     );

@@ -3,42 +3,40 @@ import React from 'react';
 export const UserDetails = ({ user }) => {
     return(
         <div className="user-details">
-            
             <label>
                 Birthday
             </label>
             <p>
-                {user.birthday}
+                { user.birthday }
             </p>
 
             <label>
                 Direction
             </label>
             <p>
-                {user.direction}
+                { user.direction }
             </p>
 
             <label>
                 Subdirection
             </label>
             <p>
-                {user.subdirection}
+                { user.subdirection }
             </p>
 
             <label>
                 Email
             </label>
             <p>
-                {user.email}
+                { user.email }
             </p>
 
             <label>
                 Phone
             </label>
             <p>
-                {user.phone}
+                { user.phone }
             </p>
-
         </div>
     )
 };
