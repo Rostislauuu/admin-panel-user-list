@@ -31,7 +31,7 @@ const validatePassword = password => {
 };
 
 const LoginPage = ({ errors, touched }) => {
-    const { role, permission, setRole } = useContext(RoleContext);
+    const { role, setRole } = useContext(RoleContext);
     setRole( localStorage.getItem('permission') );
 
     return(
@@ -67,8 +67,7 @@ const LoginPage = ({ errors, touched }) => {
                     </Button>
                 </Form>
                 
-                { ( role === permission.user  &&  localStorage.getItem('jwt') ) && <Redirect to="/main-page" /> }
-                { ( role === permission.admin && localStorage.getItem('jwt') ) && <Redirect to="/main-page" /> }
+                { ( role  &&  localStorage.getItem('jwt') ) && <Redirect to="/main-page" /> }
             </div>
         </Route>
     )
