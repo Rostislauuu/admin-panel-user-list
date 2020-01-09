@@ -9,9 +9,7 @@ export const ManageDevices = () => {
     return(
        <Fragment>
            <div className="manage-devices-buttons">
-
                <div className="first-row">
-
                    <Link to="/main-page/manage_devices/apply" style={{ textDecoration: 'none' }}>
                        <Button variant="contained" color="primary">
                            Apply Device
@@ -23,18 +21,14 @@ export const ManageDevices = () => {
                            Add Device
                        </Button>
                    </Link>
-
                </div>
-
            </div>
-
 
            <div className="manage-devices-action">
                { renderRoutes(manageDevicesRoutes) }
            </div>
 
            <ManageDevicesTable />
-
        </Fragment>
     )
 };

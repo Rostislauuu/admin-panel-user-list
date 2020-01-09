@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
@@ -9,8 +9,8 @@ import { TextField } from 'formik-material-ui';
 import { Field, withFormik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { deleteDevice } from '../../store/actions/devices/deleteDevice';
-import axios from 'axios';
 import { updateDevice } from '../../store/actions/devices/updateDevice';
+import axios from 'axios';
 
 const ManageDevicesItem = ({ values }) => {
     const [ isDisabled, setIsDisabled ] = useState(true);
@@ -35,7 +35,6 @@ const ManageDevicesItem = ({ values }) => {
     return(
         <TableBody>
             <TableRow>
-
                 <TableCell align="center">
                     <Field type="text" name="device" value={values.device} component={TextField}
                            disabled={isDisabled}
@@ -53,7 +52,6 @@ const ManageDevicesItem = ({ values }) => {
 
                     <DeleteIcon style={{ cursor: 'pointer' }} onClick={onHandleDelete} />
                 </TableCell>
-
             </TableRow>
         </TableBody>
     )

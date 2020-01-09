@@ -1,7 +1,7 @@
 import React, { Fragment, useContext } from 'react';
+import * as Yup from 'yup';
 import { Redirect, Route } from 'react-router-dom';
 import { withFormik, Form, Field } from 'formik';
-import * as Yup from 'yup';
 import { RoleContext } from "./RoleContext/RoleContext";
 import { TextField } from 'formik-material-ui';
 import { Button } from '@material-ui/core';
@@ -37,10 +37,8 @@ const LoginPage = ({ errors, touched }) => {
     return(
         <Route exact path="/">
             <div className="login-form-root">
-
                 <Form className="login-form-box">
                     <Fragment>
-
                         { touched.login && errors.login &&
                             <p style={{ display: 'none' }}>
                                 {errors.login}
@@ -53,7 +51,6 @@ const LoginPage = ({ errors, touched }) => {
                     </Fragment>
 
                     <Fragment>
-
                         { touched.password && errors.password &&
                             <p style={{ display: 'none' }}>
                                 {errors.password}
@@ -63,7 +60,6 @@ const LoginPage = ({ errors, touched }) => {
                         <Field type="password" label="Password" name="password" validate={validatePassword}
                                component={TextField} style={{ marginTop: '10px' }}
                         />
-
                     </Fragment>
 
                     <Button type="submit" variant="contained" color="primary">
@@ -73,7 +69,6 @@ const LoginPage = ({ errors, touched }) => {
                 
                 { ( role === permission.user  &&  localStorage.getItem('jwt') ) && <Redirect to="/main-page" /> }
                 { ( role === permission.admin && localStorage.getItem('jwt') ) && <Redirect to="/main-page" /> }
-                
             </div>
         </Route>
     )
@@ -101,6 +96,7 @@ export default withFormik({
            values.role = user;
            localStorage.setItem('permission', values.role);
            localStorage.setItem('jwt', 'hello');
+           
        } else if ( values.login === admin && values.password === admin ) {
            values.role = admin;
            localStorage.setItem('permission', values.role);

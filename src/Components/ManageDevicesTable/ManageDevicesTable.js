@@ -1,7 +1,7 @@
 import React from 'react';
 import Table from '@material-ui/core/Table';
-import { useSelector } from 'react-redux';
 import ManageDevicesItem from './ManageDevicesItem';
+import { useSelector } from 'react-redux';
 
 export const ManageDevicesTable = () => {
     const devices = useSelector( state => state.devices );

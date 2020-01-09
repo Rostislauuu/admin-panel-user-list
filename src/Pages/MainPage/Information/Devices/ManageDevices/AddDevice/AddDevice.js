@@ -4,10 +4,9 @@ import { useDispatch } from 'react-redux';
 
 export const AddDevice = () => {
     const dispatch = useDispatch();
-    const buttonName = 'Add';
-    const permission = 'Add';
+    const addDevice = 'Add';
 
     return(
-        <ManageDevicesForm buttonName={buttonName} permission={permission} dispatch={dispatch} />
+        <ManageDevicesForm buttonName={addDevice} permission={addDevice} dispatch={dispatch} />
     )
 };

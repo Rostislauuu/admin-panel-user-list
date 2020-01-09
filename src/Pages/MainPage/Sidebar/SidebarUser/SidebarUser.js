@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import { withStyles } from '@material-ui/core/styles';
 import { usePopupState, bindMenu, bindTrigger } from 'material-ui-popup-state/hooks';
 import { Link } from "react-router-dom";
 
@@ -39,7 +39,7 @@ const StyledMenuItem = withStyles(theme => ({
 }))(MenuItem);
 
 export const SidebarUser = () => {
-    const [anchorEl, setAnchorEl] = useState(null);
+    const [ anchorEl, setAnchorEl ] = useState(null);
     const popupState = usePopupState({ variant: 'popover', popupId: 'demoMenu' });
 
     const handleClick = event => {
@@ -52,7 +52,6 @@ export const SidebarUser = () => {
 
     return (
         <div>
-
             <Button
                 aria-controls="customized-menu"
                 aria-haspopup="true"
@@ -72,7 +71,6 @@ export const SidebarUser = () => {
                 onClose={handleClose}
                 { ...bindMenu(popupState) }
             >
-
                 <StyledMenuItem>
                     <Link  to="/main-page/users" style={{ textDecoration: 'none', color: '#212121' }} >
                         <ListItemText primary="Users List" onClick={popupState.close} />
@@ -84,7 +82,6 @@ export const SidebarUser = () => {
                         <ListItemText primary="Devices List" onClick={popupState.close} />
                     </Link>
                 </StyledMenuItem>
-
             </StyledMenu>
         </div>
     );

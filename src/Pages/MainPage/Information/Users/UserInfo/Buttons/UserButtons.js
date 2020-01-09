@@ -1,6 +1,6 @@
-import React, { useContext, Fragment } from 'react'
-import { AdminContext } from '../../../AddUser/AdminContext/AdminContext';
+import React, { useContext, Fragment } from 'react';
 import Button from '@material-ui/core/Button';
+import { AdminContext } from '../../../AddUser/AdminContext/AdminContext';
 
 export const UserButtons = () => {
     const { setIsRedirect, returnBack } = useContext(AdminContext);
