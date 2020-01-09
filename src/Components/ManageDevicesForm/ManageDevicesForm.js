@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
-import {Select, TextField} from 'formik-material-ui';
 import MenuItem from '@material-ui/core/MenuItem';
 import Button from '@material-ui/core/Button';
+import { Select, TextField } from 'formik-material-ui';
 import { withFormik, Field, Form } from 'formik';
 import { useSelector } from 'react-redux';
 import { addDevice } from '../../store/actions/devices/addDevice';
-import {applyDevice} from "../../store/actions/devices/applyDevice";
+import { applyDevice } from "../../store/actions/devices/applyDevice";
 import axios from "axios";
 
 const permission = {
@@ -13,10 +13,12 @@ const permission = {
     add: 'Add'
 };
 
+const empty = '';
+
 const validateDevice = device => {
     let error;
 
-    if( device === '' ) {
+    if( device === empty ) {
         error = 'Field is empty';
     }
 
@@ -26,7 +28,7 @@ const validateDevice = device => {
 const validateUser = user => {
     let error;
 
-    if( user === '' ) {
+    if( user === empty ) {
         error = 'Field is empty';
     }
 
@@ -36,7 +38,7 @@ const validateUser = user => {
 const validateNewValue = newValue => {
     let error;
 
-    if( newValue === '' ) {
+    if( newValue === empty ) {
         error = 'Field is empty';
     }
 
@@ -56,7 +58,6 @@ const ManageDevicesForm = ({ values, errors }) => {
 
                { values.permission === permission.apply  &&
                    <Fragment>
-
                        <Field name="device" component={Select} displayEmpty={true} error={deviceError}
                               validate={validateDevice} className="device-select" style={{ width: '100%' }}
                        >
@@ -75,7 +76,6 @@ const ManageDevicesForm = ({ values, errors }) => {
                                    </MenuItem>
                                })
                            }
-
                        </Field>
 
                        <Field name="user" component={Select} displayEmpty={true} error={userError} validate={validateUser}
@@ -96,9 +96,7 @@ const ManageDevicesForm = ({ values, errors }) => {
                                    </MenuItem>
                                })
                            }
-
                        </Field>
-
                    </Fragment>
                }
 

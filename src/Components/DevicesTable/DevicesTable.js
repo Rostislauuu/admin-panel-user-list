@@ -12,9 +12,7 @@ export const DevicesTable = () => {
     return(
         <div className="devices-table">
             <Table>
-
                 <TableHead>
-
                     <TableRow>
 
                         <TableCell>
@@ -26,11 +24,9 @@ export const DevicesTable = () => {
                         </TableCell>
 
                     </TableRow>
-
                 </TableHead>
 
                 <TableBody>
-
                     {
                         data.map( ( item, index ) => {
                             return <TableRow key={index}>
@@ -44,9 +40,7 @@ export const DevicesTable = () => {
                             </TableRow>
                         })
                     }
-
                 </TableBody>
-
             </Table>
         </div>
     )

@@ -1,9 +1,9 @@
 import React, { Fragment, useEffect } from 'react';
-import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-import { Select } from 'formik-material-ui';
 import MenuItem from '@material-ui/core/MenuItem';
 import Button from '@material-ui/core/Button';
+import { withFormik, Form, Field } from 'formik';
+import { Select } from 'formik-material-ui';
 import { TextField } from 'formik-material-ui';
 import { directions } from './directions';
 import { subdirections } from './subdirections';
@@ -14,7 +14,7 @@ import axios from "axios";
 const adminRoutePath = "/main-page/admin";
 
 const UserForm = ({ errors, values }) => {
-    let isDirection = !values.direction;
+    const isDirectionSelected = !values.direction;
     const  subdirectionsToShow = subdirections.filter( item => {
         return values.direction === item.type ? item.typeName : null
     });
@@ -35,7 +35,6 @@ const UserForm = ({ errors, values }) => {
 
     return(
         <Form className="user-form">
-
             <Fragment>
                 <Field type="text" label="Name" name="fullName" value={values.fullName}
                        error={fullNameError} component={TextField}
@@ -52,7 +51,6 @@ const UserForm = ({ errors, values }) => {
                 <Field name="direction" component={Select} displayEmpty={true} error={directionError}
                         style={{ marginTop: '35px' }} className="select-field"
                 >
-
                     { !values.selectedUser.direction &&
                         <MenuItem value="">
                             <em>
@@ -70,16 +68,13 @@ const UserForm = ({ errors, values }) => {
                             </MenuItem>
                         })
                     }
-
                 </Field>
-
             </Fragment>
 
             <Fragment>
-                <Field name="subdirection" component={Select} displayEmpty={true} disabled={isDirection}
+                <Field name="subdirection" component={Select} displayEmpty={true} disabled={isDirectionSelected}
                        error={subdirectionError} style={{ marginTop: '35px' }} className="select-field"
                 >
-
                     { !values.selectedUser.subdirection  &&
                         <MenuItem value="">
                             <em>
@@ -97,7 +92,6 @@ const UserForm = ({ errors, values }) => {
                             </MenuItem>
                         })
                     }
-
                 </Field>
             </Fragment>
 

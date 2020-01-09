@@ -9,14 +9,12 @@ export const MainPage = () => {
         <Fragment>
         <div className="root-box">
             <div className="wrapper">
-
                     <Header />
                     <div className="main">
                         <Sidebar />
                         <Information />
                     </div>
-
-                </div>
+            </div>
 
             <div className="footer">
                 <Footer />

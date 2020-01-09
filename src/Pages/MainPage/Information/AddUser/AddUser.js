@@ -1,7 +1,7 @@
 import React from 'react';
 import { UserFormValidation } from '../../../../Components/UserForm/UserForm';
-import './style/style.css';
 import { useDispatch } from "react-redux";
+import './style/style.css';
 
 export const AddUser = ({ location }) => {
     const dispatch = useDispatch();

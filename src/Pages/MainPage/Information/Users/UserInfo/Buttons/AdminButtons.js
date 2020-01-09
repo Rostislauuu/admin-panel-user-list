@@ -1,7 +1,7 @@
-import React, { Fragment, useContext } from 'react'
+import React, { Fragment, useContext } from 'react';
+import Button from '@material-ui/core/Button';
 import { useParams } from 'react-router-dom';
 import { AdminContext } from '../../../AddUser/AdminContext/AdminContext';
-import Button from '@material-ui/core/Button';
 import { useDispatch } from 'react-redux';
 import { deleteUser } from '../../../../../../store/actions/users/deleteUser';
 import axios from "axios";
@@ -11,13 +11,13 @@ export const AdminButtons = ({ setIsUpdating }) => {
     const { setIsRedirect, returnBack } = useContext(AdminContext);
     let { id } = useParams();
 
-    const onDelete = () => {
+    const handleDelete = () => {
         axios.delete(`http://test-api-vakoms.herokuapp.com/users/${id}`);
         dispatch( deleteUser(id) );
         setIsRedirect(true);
     };
 
-    const onSetUpdating = () => {
+    const handleSetUpdating = () => {
         setIsUpdating(true);
     };
 
@@ -31,13 +31,13 @@ export const AdminButtons = ({ setIsUpdating }) => {
                 Back
             </Button>
 
-            <Button variant="contained" color="primary" onClick={onSetUpdating}
+            <Button variant="contained" color="primary" onClick={handleSetUpdating}
                     style={{ marginRight: '10px' }}
             >
                 Update
             </Button>
 
-            <Button variant="contained" color="primary" onClick={onDelete}
+            <Button variant="contained" color="primary" onClick={handleDelete}
                     style={{ marginRight: '10px' }}
             >
                 Delete

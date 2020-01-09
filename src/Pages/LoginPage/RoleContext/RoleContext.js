@@ -1,9 +1,9 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import axios from "axios";
 import { getUsers } from '../../../store/actions/users/getUsers';
 import { getDevices } from '../../../store/actions/devices/getDevices';
 import { getChartData } from '../../../store/actions/chart/getChartData';
+import axios from "axios";
 
 export const RoleContext = createContext();
 
@@ -46,7 +46,8 @@ export const RoleContextProvider = ({ children }) => {
         admin: 'admin',
         unknown: 'unknown'
     };
-    const [ role, setRole ] = useState(permission.initialRole);
+    const roleInitialState = '';
+    const [role, setRole] = useState(roleInitialState);
 
    const logOut = () => {
         localStorage.removeItem('jwt');
