@@ -6,7 +6,7 @@ import './style/style.css';
 export const Users = () => {
        return(
             <Fragment>
-                {renderRoutes(usersListRoutes)}
+                { renderRoutes(usersListRoutes) }
             </Fragment>
        )
 };

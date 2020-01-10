@@ -30,35 +30,26 @@ const validatePassword = password => {
     return error;
 };
 
-const LoginPage = ({ errors, touched }) => {
+const LoginPage = ({ errors }) => {
     const { role, setRole } = useContext(RoleContext);
     setRole( localStorage.getItem('permission') );
+
+    const loginError = !!errors.login;
+    const passwordError = !!errors.login;
 
     return(
         <Route exact path="/">
             <div className="login-form-root">
                 <Form className="login-form-box">
                     <Fragment>
-                        { touched.login && errors.login &&
-                            <p style={{ display: 'none' }}>
-                                {errors.login}
-                            </p>
-                        }
-
                         <Field type="text" label="Login" name="login" validate={validateLogin}
-                               component={TextField}
+                               component={TextField} error={loginError}
                         />
                     </Fragment>
 
                     <Fragment>
-                        { touched.password && errors.password &&
-                            <p style={{ display: 'none' }}>
-                                {errors.password}
-                            </p>
-                        }
-
                         <Field type="password" label="Password" name="password" validate={validatePassword}
-                               component={TextField} style={{ marginTop: '10px' }}
+                            component={TextField} style={{ marginTop: '10px' }} error={passwordError}
                         />
                     </Fragment>
 

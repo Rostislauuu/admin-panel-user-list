@@ -60,10 +60,10 @@ const UserForm = ({ errors, values }) => {
                     }
 
                     {
-                        directions.map(( item, index ) => {
-                            return <MenuItem key={index} value={item.type}>
+                        directions.map(( direction, index ) => {
+                            return <MenuItem key={index} value={direction.type}>
                                 <em>
-                                    { item.type }
+                                    { direction.type }
                                 </em>
                             </MenuItem>
                         })
@@ -84,10 +84,10 @@ const UserForm = ({ errors, values }) => {
                     }
 
                     {
-                        subdirectionsToShow.map( ( item, index ) => {
-                            return <MenuItem key={index} value={item.typeName}>
+                        subdirectionsToShow.map( ( subdirection, index ) => {
+                            return <MenuItem key={index} value={subdirection.typeName}>
                                 <em>
-                                    { item.typeName }
+                                    { subdirection.typeName }
                                 </em>
                             </MenuItem>
                         })
@@ -107,9 +107,7 @@ const UserForm = ({ errors, values }) => {
                 />
             </Fragment>
 
-            <Button variant="contained" color="primary" type="submit"
-                    style={{ marginTop: '30px' }}
-            >
+            <Button variant="contained" color="primary" type="submit"style={{ marginTop: '30px' }} >
                 Submit
             </Button>
 

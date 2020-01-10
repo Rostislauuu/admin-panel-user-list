@@ -47,7 +47,7 @@ export const RoleContextProvider = ({ children }) => {
         unknown: 'unknown'
     };
     const roleInitialState = '';
-    const [role, setRole] = useState(roleInitialState);
+    const [ role, setRole ] = useState(roleInitialState);
 
    const logOut = () => {
         localStorage.removeItem('jwt');
@@ -56,8 +56,8 @@ export const RoleContextProvider = ({ children }) => {
    };
 
     return(
-        <RoleContext.Provider value={{ role, permission, logOut, setRole } }>
-            {children}
+        <RoleContext.Provider value={{ role, permission, logOut, setRole }}>
+            { children }
         </RoleContext.Provider>
     )
 };

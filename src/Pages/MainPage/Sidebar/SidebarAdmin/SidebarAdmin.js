@@ -13,7 +13,7 @@ const StyledMenu = withStyles({
     paper: {
         border: '1px solid #d3d4d5',
     },
-})(props => (
+}) ( props => (
     <Menu
         elevation={0}
         getContentAnchorEl={null}
@@ -25,11 +25,11 @@ const StyledMenu = withStyles({
             vertical: 'top',
             horizontal: 'center',
         }}
-        {...props}
+        { ...props }
     />
 ));
 
-const StyledMenuItem = withStyles(theme => ({
+const StyledMenuItem = withStyles( theme => ({
     root: {
         '&:focus': {
             backgroundColor: theme.palette.primary.main,
@@ -38,7 +38,7 @@ const StyledMenuItem = withStyles(theme => ({
             },
         },
     },
-}))(MenuItem);
+})) (MenuItem);
 
 export const SidebarAdmin = () => {
     const [ anchorEl, setAnchorEl ] = useState(null);
@@ -79,7 +79,7 @@ export const SidebarAdmin = () => {
                 id="customized-menu"
                 anchorEl={anchorEl}
                 keepMounted
-                open={Boolean(anchorEl)}
+                open={ Boolean(anchorEl) }
                 onClose={handleClose}
                 { ...bindMenu(popupState) }
             >
