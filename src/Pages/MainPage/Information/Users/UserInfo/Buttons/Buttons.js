@@ -9,6 +9,7 @@ export const Buttons = ({ setIsUpdating }) => {
     return(
         <Fragment>
             { role === permission.user && <UserButtons /> }
+            
             { role === permission.admin && <AdminButtons setIsUpdating={setIsUpdating} /> }
         </Fragment>
     )

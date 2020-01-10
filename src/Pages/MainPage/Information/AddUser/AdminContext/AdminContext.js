@@ -9,12 +9,11 @@ export const AdminContextProvider = ({ children }) => {
         if(isRedirect) {
             return <Redirect to="/main-page/users" />
         }
-
     };
 
     return(
         <AdminContext.Provider value={{ setIsRedirect, returnBack }}>
-            {children}
+            { children }
         </AdminContext.Provider>
     )
 };

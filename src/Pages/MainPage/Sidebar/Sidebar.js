@@ -10,7 +10,7 @@ export const Sidebar = () => {
     return(
         <div className="sidebar-root-box">  
             {role === permission.user && <SidebarUser />}
-
+            
             {role === permission.admin && <SidebarAdmin />}
         </div>
     )

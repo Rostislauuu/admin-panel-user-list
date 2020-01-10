@@ -13,9 +13,7 @@ export const Header = () => {
                 <img className="header-image" alt="Vakoms" src={vakomsLogo} />
             </Link>
 
-            <Button variant="contained" color="primary" onClick={logOut}
-                    style={{ width: '11%' }}
-            >
+            <Button variant="contained" color="primary" onClick={logOut} style={{ width: '11%' }} >
                 Log Out
             </Button>
         </header>
