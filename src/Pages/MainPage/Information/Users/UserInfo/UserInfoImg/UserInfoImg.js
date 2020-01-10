@@ -12,7 +12,7 @@ export const UserInfoImg = ({ selectedUser }) => {
                     Name
                 </label>
                 <p>
-                    {selectedUser.fullName}
+                    { selectedUser.fullName }
                 </p>
             </div>
 

@@ -37,9 +37,7 @@ export const AdminButtons = ({ setIsUpdating }) => {
                 Update
             </Button>
 
-            <Button variant="contained" color="primary" onClick={handleDelete}
-                    style={{ marginRight: '10px' }}
-            >
+            <Button variant="contained" color="primary" onClick={handleDelete} >
                 Delete
             </Button>
         </Fragment>

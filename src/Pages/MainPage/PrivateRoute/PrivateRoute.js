@@ -7,8 +7,8 @@ export const PrivateRoute = ({ children, ...rest }) => {
     
     return(
         <Route
-            {...rest}
-            render={ ({location}) =>
+            { ...rest }
+            render={ ({ location }) =>
                 role && localStorage.getItem('jwt') ? (
                     children
                 ) : (

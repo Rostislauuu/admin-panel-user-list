@@ -16,7 +16,7 @@ const ManageDevicesItem = ({ values }) => {
     const [ isDisabled, setIsDisabled ] = useState(true);
     const dispatch = useDispatch();
 
-    const onHandleDelete = () => {
+    const handleDelete = () => {
         axios.delete(`http://test-api-vakoms.herokuapp.com/users_devices/${values.id}`);
         dispatch( deleteDevice(values.id) );
     };
@@ -50,7 +50,7 @@ const ManageDevicesItem = ({ values }) => {
                         <CheckIcon onClick={handleSubmit} style={{ marginRight: '10px', cursor: 'pointer' }}/>
                     }
 
-                    <DeleteIcon style={{ cursor: 'pointer' }} onClick={onHandleDelete} />
+                    <DeleteIcon style={{ cursor: 'pointer' }} onClick={handleDelete} />
                 </TableCell>
             </TableRow>
         </TableBody>

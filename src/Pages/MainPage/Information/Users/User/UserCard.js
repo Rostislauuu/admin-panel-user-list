@@ -14,7 +14,7 @@ export const UserCard = ({ user }) => {
 
                 <div className="user-name">
                     <p>
-                        {user.fullName}
+                        { user.fullName }
                     </p>
                 </div>
             </div>
