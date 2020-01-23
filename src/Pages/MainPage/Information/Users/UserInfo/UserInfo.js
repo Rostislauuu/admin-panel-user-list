@@ -16,7 +16,7 @@ export const UserInfo = () => {
     const fetchData = async () => {
         const response = await fetch(`https://test-api-vakoms.herokuapp.com/users/${id}`);
         const data = await response.json();
-        setSelectedUser(data);git 
+        setSelectedUser(data);
     };
 
     useEffect( () => {
