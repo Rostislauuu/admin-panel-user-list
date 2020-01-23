@@ -153,11 +153,11 @@ export const UserFormValidation = withFormik({
         };
 
         if (values.pathname === adminRoutePath) {
-            axios.post('http://test-api-vakoms.herokuapp.com/users/', dataToSend)
+            axios.post('https://test-api-vakoms.herokuapp.com/users/', dataToSend)
                 .then( user => values.dispatch( addUser(user.data) ) );
 
         } else {
-            axios.put(`http://test-api-vakoms.herokuapp.com/users/${values.id}`, dataToSend)
+            axios.put(`https://test-api-vakoms.herokuapp.com/users/${values.id}`, dataToSend)
                 .then( user => values.dispatch( updateUser(user.data) ) );
 
             setTimeout(() => values.setIsUpdating(false), 1);

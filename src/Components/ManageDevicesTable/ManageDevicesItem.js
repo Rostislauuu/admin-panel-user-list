@@ -17,7 +17,7 @@ const ManageDevicesItem = ({ values }) => {
     const dispatch = useDispatch();
 
     const handleDelete = () => {
-        axios.delete(`http://test-api-vakoms.herokuapp.com/users_devices/${values.id}`);
+        axios.delete(`https://test-api-vakoms.herokuapp.com/users_devices/${values.id}`);
         dispatch( deleteDevice(values.id) );
     };
 
@@ -26,7 +26,7 @@ const ManageDevicesItem = ({ values }) => {
     };
 
     const handleSubmit = () => {
-        axios.put(`http://test-api-vakoms.herokuapp.com/users_devices/${values.id}`, {
+        axios.put(`https://test-api-vakoms.herokuapp.com/users_devices/${values.id}`, {
             device_name: values.device
         }).then( device => dispatch( updateDevice(device.data) ));
         setIsDisabled(!isDisabled);
