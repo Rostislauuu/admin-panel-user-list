@@ -12,7 +12,7 @@ export const AdminButtons = ({ setIsUpdating }) => {
     let { id } = useParams();
 
     const handleDelete = () => {
-        axios.delete(`http://test-api-vakoms.herokuapp.com/users/${id}`);
+        axios.delete(`https://test-api-vakoms.herokuapp.com/users/${id}`);
         dispatch( deleteUser(id) );
         setIsRedirect(true);
     };
