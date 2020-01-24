@@ -16,8 +16,8 @@ export const RoleContextProvider = ({ children }) => {
             try {
                 const [ userResponse, devicesResponse, chartResponse ] = await Promise.all([
                     axios.get('https://test-api-vakoms.herokuapp.com/users/', { cancelToken: source.token }),
-                    axios.get('https://test-api-vakoms.herokuapp.com/users_devices/', { cancelToken: source.token }),
-                    axios.get('https://test-api-vakoms.herokuapp.com/charts/data/', { cancelToken: source.token})
+                    axios.get('https://test-api-vakoms.herokuapp.com/users_devices', { cancelToken: source.token }),
+                    axios.get('https://test-api-vakoms.herokuapp.com/charts/data', { cancelToken: source.token})
                 ]);
 
                 dispatch( getUsers(userResponse.data) );
