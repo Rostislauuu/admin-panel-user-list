@@ -14,7 +14,7 @@ export const UserInfo = () => {
     let { id } = useParams();
 
     const fetchData = async () => {
-        const response = await fetch(`http://test-api-vakoms.herokuapp.com/users/${id}`);
+        const response = await fetch(`https://test-api-vakoms.herokuapp.com/users/${id}`);
         const data = await response.json();
         setSelectedUser(data);
     };

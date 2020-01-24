@@ -132,12 +132,12 @@ export default withFormik({
 
     handleSubmit(values, { resetForm }) {
         if( values.permission === permission.apply ) {
-            axios.put(`http://test-api-vakoms.herokuapp.com/users_devices/${values.device}`, {
+            axios.put(`https://test-api-vakoms.herokuapp.com/users_devices/${values.device}`, {
                 user: values.user
             }).then( device => values.dispatch( applyDevice(device.data) ))
 
         } else if( values.permission === permission.add ) {
-            axios.post('http://test-api-vakoms.herokuapp.com/users_devices/', {
+            axios.post('https://test-api-vakoms.herokuapp.com/users_devices/', {
                 device_name: values.newValue
             }).then( device => values.dispatch( addDevice(device.data) ) );
 
